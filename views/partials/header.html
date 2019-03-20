@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- <link rel="stylesheet" href="/stylesheets/main.css"> -->
+        <link rel="stylesheet" href="H:\The-Photopreneur\public\stylesheets\main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
@@ -20,15 +20,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-camera"></span> The Photopreneur</a>
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-camera"></span><b> The Photopreneur</b></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Categories</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Photographers</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Articles</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle comp" data-toggle="dropdown" href="#">Categories
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu navbar-text">
+                          <li><a class="dropdown-item" href="#">Food</a></li>
+                          <li><a class="dropdown-item" href="#">People</a></li>
+                          <li><a class="dropdown-item" href="#">Architectural</a></li>
+                          <li><a class="dropdown-item" href="#">Dawn & Dusk</a></li>
+                          <li><a class="dropdown-item" href="#">Flora & Fauna</a></li>
+                          <li><a class="dropdown-item" href="#">Random</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="comp" href="#">About</a></li>
+                    <li><a class="comp" href="#">Photographers</a></li>
+                    <li><a class="comp" href="#">Contact Us</a></li>
+                    <li><a class="comp" href="#">Articles</a></li>
                     <!-- <% if(!currentUser){ %> -->
                         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
