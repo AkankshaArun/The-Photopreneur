@@ -1,0 +1,56 @@
+.site-footer {
+    background-color: #FCF3CF;
+}
+
+#first ul li a{
+    font-size: 20px;
+    text-decoration:none;
+    color: black;
+}
+
+#first ul li a:hover,
+#second ul li a:hover,
+#third ul li a:hover {
+    color: #1A3084;
+}
+
+#second ul li a,
+#third ul li a {
+    text-decoration:none;
+    color: maroon;
+}
+
+#bottomMost {
+    background-color: #FEF1BE;
+}
+
+#first, #second, #third, #fourth {
+    padding: 0px 0px 0px 0px;
+}
+
+.line {
+    margin: 0px;
+}
+
+.social {
+    width: 50%;
+}
+
+.btn-fb {
+    background-color: #3b5998;
+    color: white;
+}
+
+.btn-ins {
+    background-color: #FD1D1D;
+    color: white;
+}
+
+.btn-email {
+    background-color: #c71610;
+    color: white;
+}
+
+#fourth .social .pb-2 a:hover {
+    color: white;
+}
