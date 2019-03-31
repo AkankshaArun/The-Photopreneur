@@ -1,0 +1,26 @@
+
+.card-img-top {
+    width: 100%;
+    height: 10vw;
+    object-fit: cover;
+}
+.card__height {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+@media only screen and (max-width: 600px) {
+  .card-img-top{
+    height : 500px;
+}
+}
+body {
+  /*background-image: url(/images/body.jpg);*/
+  background-color: #ffe0b2;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-body {
+  background: #fff3e0;
+}
