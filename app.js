@@ -6,7 +6,16 @@ app.use(express.static("public"));
 
 //Rendering Index
 app.get("/",function(req,res){
-  res.render("index")
+  res.render("index");
+});
+
+
+app.get("/categories",function(req,res){
+  res.render("categories");
+});
+
+app.get("/about",function(req,res){
+  res.render("about");
 });
 
 app.listen("3000",function(){
