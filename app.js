@@ -58,7 +58,20 @@ app.get("/categories",function(req,res){
 
 //Rendering Index
 app.get("/",function(req,res){
-  res.render("index")
+  res.render("index");
+});
+
+
+app.get("/categories",function(req,res){
+  res.render("categories");
+});
+
+app.get("/about",function(req,res){
+  res.render("about");
+});
+
+app.get("/contact",function(req,res){
+  res.render("contact");
 });
 
 app.listen("3000",function(){
