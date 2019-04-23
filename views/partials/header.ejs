@@ -33,8 +33,8 @@
             <a class="dropdown-item" href="#">Food</a>
             <a class="dropdown-item" href="#">People</a>
             <a class="dropdown-item" href="#">Random</a>
+            <a class="dropdown-item" href="#">Structures</a>
             <a class="dropdown-item" href="#">Golden Hour</a>
-            <a class="dropdown-item" href="#">Architectural</a>
             <a class="dropdown-item" href="#">Flora & Fauna</a>
           </div>
         </li>
@@ -62,12 +62,17 @@
   </div>
 </nav>
 
+
 <div class="container">
      <% if(error && error.length > 0) { %>
-       <div class="alert alert-danger"><p><%=error %></p></div>
+       <div class="alert alert-danger">
+           <p><%=error %></p>
+       </div>
      <% } %>
 
      <% if(success && success.length > 0) { %>
-       <div class="alert alert-success"><p><%= success %></p></div>
+       <div class="alert alert-success">
+           <p><%= success %></p>
+        </div>
      <% } %>
   </div>
