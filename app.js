@@ -5,6 +5,7 @@ app         = express(),
  flash       = require("connect-flash"),
  passport    = require("passport"),
  LocalStrategy = require("passport-local"),
+ // GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
  methodOverride = require("method-override"),
  // Comment     = require("./models/comment"),
  User        = require("./models/user"),
@@ -44,6 +45,18 @@ app.use(function(req, res, next){
    res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();});
+
+    // passport.use(new GoogleStrategy({
+    //     clientID: "636201172967-2gciiaoqpq9u4vk82b5r0is2m8u4jp02.apps.googleusercontent.com",
+    //     clientSecret: "7_0IyyQ1OwlKTTHG2mkBhn7r",
+    //     callbackURL: "http://www.photopreneur.co.in//auth/google/callback"
+    //   },
+    //   function(accessToken, refreshToken, profile, done) {
+    //        User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    //          return done(err, user);
+    //        });
+    //   }
+    // ));
 
 app.use("/", indexRoutes);
 // app.use("/campgrounds/:id/comments", commentRoutes);
