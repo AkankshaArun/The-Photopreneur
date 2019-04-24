@@ -12,7 +12,7 @@ app         = express(),
 app.set("view engine","ejs");
 
 // // configure dotenv
-// require('dotenv').load();
+require('dotenv').config();
 
 
 //requiring routes
@@ -50,5 +50,5 @@ app.use("/", indexRoutes);
 
 
 app.listen("3000",function(){
-  console.log("Server Is Responding")
+  console.log("Server Is Responding");
 });
