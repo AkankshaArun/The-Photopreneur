@@ -5,28 +5,73 @@ app         = express(),
  flash       = require("connect-flash"),
  passport    = require("passport"),
  LocalStrategy = require("passport-local"),
- // GoogleStrategy = require('passport-google-oauth').OAuth2Strategy,
  methodOverride = require("method-override"),
- // Comment     = require("./models/comment"),
+ Comment     = require("./models/comment"),
  User        = require("./models/user"),
+ Photo       = require("./models/photo"),
  ejs = require('ejs');
-app.set("view engine","ejs");
-
 // // configure dotenv
 require('dotenv').config();
-
-
-//requiring routes
-// const commentRoutes    = require("./routes/comments");
 var indexRoutes      = require("./routes/index");
 
-mongoose.connect("mongodb://localhost:27017/photopreneur",{ useNewUrlParser: true });
 mongoose.set('useCreateIndex', true);
-app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
+app.set("view engine","ejs");
+app.use(bodyParser.urlencoded({extended: true}));
+
+mongoose.connect("mongodb://localhost:27017/photopreneur",{useNewUrlParser: true});
+var indexRoutes = require("./routes/index");
+
+app.get("/categories",function(req,res){
+  Photo.find({},function(err, photos){
+    if (err) {
+      console.log(err);
+    }else {
+      res.render("categories",{photos : photos});
+    }
+  });
+});
+//Rendering Index
+app.get("/",function(req,res){
+  res.render("index");
+});
+
+app.post("/categories/:id/comment",function(req,res){
+  Photo.findById(req.params.id,function(error,photo){
+    if (error) {
+      console.log(error);
+      res.redirect("/categories");
+    }else{
+      Comment.create(req.body.comment, function(err,commentData){
+        if (err) {
+          console.log(err);
+        }else {
+          //commentData.author.username = req.user.username;
+          //.author._id = req.user._id;
+          photo.comments.push(commentData);
+          console.log(photo);
+          photo.save();
+          console.log(commentData);
+          res.redirect("/categories/" + photo._id);
+        }
+      })
+    }
+  })
+});
+
+//rendering Comment
+app.get("/categories/:id",function(req,res){
+  Photo.findById(req.params.id).populate("comments").exec(function(err,photo){
+    if (err) {
+      console.log(err);
+    }else {
+      res.render("show", {photo: photo});
+    }
+  })
+});
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({

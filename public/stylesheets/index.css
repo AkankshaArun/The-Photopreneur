@@ -37,3 +37,61 @@ body {
 .card-body {
   background: #fff3e0;
 }
+
+/*========================================================*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+}
+.gallery-item {
+  height: 250px;
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+  object-fit: cover;
+  cursor: pointer;
+}
+input {
+  display: none;
+}
+label {
+  display: inline-block;
+  min-width: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 30px;
+  margin: 5px;
+  cursor: pointer;
+  border: 3px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #333;
+  transition: 0.2s;
+  user-select: none;
+}
+label:hover, label:active {
+  background-color: #222;
+}
+input:checked + label {
+	background-color: #006699;
+  border-color: #333;
+}
+#food-btn:checked ~ .gallery .gallery-item:not(.food),
+#people-btn:checked ~ .gallery .gallery-item:not(.people),
+#architectural-btn:checked ~ .gallery .gallery-item:not(.architectural),
+#floraFauna-btn:checked ~ .gallery .gallery-item:not(.floraFauna),
+#golden-btn:checked ~ .gallery .gallery-item:not(.goldenHour) {
+  display: none;
+}
