@@ -42,6 +42,8 @@ app.use(function(req, res, next){
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
   next();});
+
+
 app.get("/categories",function(req,res){
   Photo.find({},function(err, photos){
     if (err) {
@@ -56,7 +58,7 @@ app.get("/",function(req,res){
   res.render("index");
 });
 
-app.post("/categories/:id/comment",function(req,res){
+app.post("/categories/:id/comment",isLoggedIn,function(req,res){
   Photo.findById(req.params.id,function(error,photo){
     if (error) {
       console.log(error);
@@ -66,12 +68,12 @@ app.post("/categories/:id/comment",function(req,res){
         if (err) {
           console.log(err);
         }else {
-          //commentData.author.username = req.user.username;
-          //.author._id = req.user._id;
-          photo.comments.push(commentData);
-          console.log(photo);
-          photo.save();
+          commentData.author.username = req.user.username;
+          commentData.author.id = req.user._id;
+          commentData.save();
           console.log(commentData);
+          photo.comments.push(commentData);
+          photo.save();
           res.redirect("/categories/" + photo._id);
         }
       })
@@ -90,22 +92,83 @@ app.get("/categories/:id",function(req,res){
   })
 });
 
+/*Photo.create({
+  imgURL : "/images/home/PeopleH.JPG",
+  tag : "people",
+  discription: "This is a People Image"
+},function(err,added){
+  if (err) {
+    console.log(err);
+  }else {
+    console.log(added);
+  }
+});
+Photo.create({
+  imgURL : "/images/home/RandomH.jpg",
+  tag : "random",
+  discription: "This is a random Image"
+},function(err,added){
+  if (err) {
+    console.log(err);
+  }else {
+    console.log(added);
+  }
+});
+Photo.create({
+  imgURL : "/images/home/FloraH.jpg",
+  tag : "floraFauna",
+  discription: "This is a Flora & Fauna Image"
+},function(err,added){
+  if (err) {
+    console.log(err);
+  }else {
+    console.log(added);
+  }
+});
+Photo.create({
+  imgURL : "/images/home/FoodH.jpg",
+  tag : "food",
+  discription: "This is a food Image"
+},function(err,added){
+  if (err) {
+    console.log(err);
+  }else {
+    console.log(added);
+  }
+});
+Photo.create({
+  imgURL : "/images/home/ArchitectureH.JPG",
+  tag : "architectural",
+  discription: "This is a architectural Image"
+},function(err,added){
+  if (err) {
+    console.log(err);
+  }else {
+    console.log(added);
+  }
+});
+Photo.create({
+  imgURL : "/images/home/GoldenH.JPG",
+  tag : "goldenHour",
+  discription: "This is a goldenHour Image"
+},function(err,added){
+  if (err) {
+    console.log(err);
+  }else {
+    console.log(added);
+  }
+});*/
 
-    // passport.use(new GoogleStrategy({
-    //     clientID: "636201172967-2gciiaoqpq9u4vk82b5r0is2m8u4jp02.apps.googleusercontent.com",
-    //     clientSecret: "7_0IyyQ1OwlKTTHG2mkBhn7r",
-    //     callbackURL: "http://www.photopreneur.co.in//auth/google/callback"
-    //   },
-    //   function(accessToken, refreshToken, profile, done) {
-    //        User.findOrCreate({ googleId: profile.id }, function (err, user) {
-    //          return done(err, user);
-    //        });
-    //   }
-    // ));
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
+
 
 app.use("/", indexRoutes);
 // app.use("/campgrounds/:id/comments", commentRoutes);
-
 
 app.listen("3000",function(){
   console.log("Server Is Responding");

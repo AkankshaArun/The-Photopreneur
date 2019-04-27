@@ -1,4 +1,4 @@
-.dropdown:hover>.dropdown-menu {
+.dropdown:hover > .dropdown-menu {
     display: block;
 }
 .dropdown>.dropdown-toggle:active {
@@ -30,6 +30,7 @@
 
 .dropdown-menu {
     border: none;
+    display: none;
 }
 
 .custom-toggler .navbar-toggler-icon {

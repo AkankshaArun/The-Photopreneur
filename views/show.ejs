@@ -4,6 +4,8 @@
 
 <img src="<%=photo.imgURL%>" alt="">
 
+<a class="btn btn-success btn-lg" href="<%=photo.imgURL%>" download="RandomH.jpg" role="button">Download <i class="fas fa-angle-double-right"></i></a>
+
 <% photo.comments.forEach(function(comment){ %>
   <p>
     <strong><%=comment.author.username %></strong> - <%=comment.text%></p>
