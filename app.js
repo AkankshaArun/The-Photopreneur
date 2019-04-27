@@ -1,87 +1,27 @@
-let Comment = require("./modals/comment");
-let Photo = require("./modals/photo");
-const express = require('express');
-const app = express();
-const ejs = require('ejs');
-let bodyParser = require("body-parser");
+const express = require('express'),
+app         = express(),
+ bodyParser  = require("body-parser"),
+ mongoose    = require("mongoose"),
+ flash       = require("connect-flash"),
+ passport    = require("passport"),
+ LocalStrategy = require("passport-local"),
+ methodOverride = require("method-override"),
+ Comment     = require("./models/comment"),
+ User        = require("./models/user"),
+ Photo       = require("./models/photo"),
+ ejs = require('ejs');
+
+mongoose.set('useCreateIndex', true);
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
+app.use(flash());
 
 app.set("view engine","ejs");
-app.use(express.static("public"));
-let mongoose = require("mongoose");
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://localhost:27017/photo",{useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/photopreneur",{useNewUrlParser: true});
+var indexRoutes = require("./routes/index");
 
-//schema setup
-
-//Adding photo manully
-/*Photo.create({
-  imgURL : "/images/home/PeopleH.JPG",
-  tag : "people",
-  discription: "This is a People Image"
-
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-Photo.create({
-  imgURL : "/images/home/RandomH.jpg",
-  tag : "random",
-  discription: "This is a random Image"
-
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-Photo.create({
-  imgURL : "/images/home/FloraH.jpg",
-  tag : "Flora & Fauna",
-  discription: "This is a Flora & Fauna Image"
-
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-Photo.create({
-  imgURL : "/images/home/FoodH.jpg",
-  tag : "food",
-  discription: "This is a food Image"
-
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-*/
-
-//adding image to the website
-/*app.post("/categories",function(req,res){
-  var imgURL = req.body.name;
-  var tag = req.body.image;
-  var discription = req.body.discription;
-  var value = {imgURL: imgURL, tag:tag, discription: discription}
-  Campground.create(value,function(err, msg){
-    if (err) {
-      console.log(err);
-    }else {
-      console.log(msg);
-      res.redirect("/categories");
-    }
-  });
-});
-*/
-//Sending data to the page
 app.get("/categories",function(req,res){
   Photo.find({},function(err, photos){
     if (err) {
@@ -91,16 +31,6 @@ app.get("/categories",function(req,res){
     }
   });
 });
-/*==========================Akanksha======================================*/
-/*function isLoggedIn(req,res,next){
-  if(req.isAuthenticated()){
-    return next();
-  }
-  res.redirect("/login");
-  return next();
-
-}*/
-/*==========================Akanksha======================================*/
 //Rendering Index
 app.get("/",function(req,res){
   res.render("index");
@@ -140,13 +70,27 @@ app.get("/categories/:id",function(req,res){
   })
 });
 
-app.get("/about",function(req,res){
-  res.render("about");
-});
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "Once again Rusty wins cutest dog!",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-app.get("/contact",function(req,res){
-  res.render("contact");
-});
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();});
+
+app.use("/", indexRoutes);
+// app.use("/campgrounds/:id/comments", commentRoutes);
+
 
 app.listen("3000",function(){
   console.log("Server Is Responding")

@@ -5,22 +5,10 @@ var User = require("../models/user");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
-
-// router.get('/auth/google',
-//   passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] }));
-//
-// router.get('/auth/google/callback',
-//     passport.authenticate('google', { failureRedirect: '/login' }),
-//     function(req, res) {
-//       res.redirect('/');
-//     });
-
-
 //Rendering Index
 router.get("/",function(req,res){
   res.render("index");
 });
-
 
 router.get("/categories",function(req,res){
   res.render("categories");
@@ -128,6 +116,7 @@ router.post('/forgot', function(req, res, next) {
   });
 });
 
+
 //Reset Password
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
@@ -188,9 +177,6 @@ router.post('/reset/:token', function(req, res) {
     res.redirect('/');
   });
 });
-
-
-
 //middleware
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
