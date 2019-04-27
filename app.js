@@ -10,6 +10,9 @@ app         = express(),
  User        = require("./models/user"),
  Photo       = require("./models/photo"),
  ejs = require('ejs');
+// // configure dotenv
+require('dotenv').config();
+var indexRoutes      = require("./routes/index");
 
 mongoose.set('useCreateIndex', true);
 app.use(express.static(__dirname + "/public"));
@@ -88,10 +91,22 @@ app.use(function(req, res, next){
     res.locals.error = req.flash('error');
     next();});
 
+    // passport.use(new GoogleStrategy({
+    //     clientID: "636201172967-2gciiaoqpq9u4vk82b5r0is2m8u4jp02.apps.googleusercontent.com",
+    //     clientSecret: "7_0IyyQ1OwlKTTHG2mkBhn7r",
+    //     callbackURL: "http://www.photopreneur.co.in//auth/google/callback"
+    //   },
+    //   function(accessToken, refreshToken, profile, done) {
+    //        User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    //          return done(err, user);
+    //        });
+    //   }
+    // ));
+
 app.use("/", indexRoutes);
 // app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 app.listen("3000",function(){
-  console.log("Server Is Responding")
+  console.log("Server Is Responding");
 });

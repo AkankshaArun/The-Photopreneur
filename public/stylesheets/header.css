@@ -11,21 +11,21 @@
 
 .navbar-custom,
 .navbar .navbar-nav .dropdown-menu {
-    background-color: #FCF3CF;
+    background-color: #340100;
 }
 
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text,
 .navbar-custom .navbar-nav .nav-link {
-    color: black;
+    color: white;
 }
 
 /* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .nav-item:hover .nav-link {
-    color: #1A3084;
+    color: #ffcdd2;
 }
 
 .dropdown-menu {
@@ -41,7 +41,7 @@
 }
 
 .custom-toggler.navbar-toggler:hover {
-    border-color: #1A3084;
+    border-color: #ffcdd2;
 }
 
 .custom-toggler .navbar-toggler-icon:hover {

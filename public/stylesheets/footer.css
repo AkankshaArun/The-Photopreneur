@@ -2,7 +2,9 @@
     background-color: #FCF3CF;
 }
 
-#first ul li a{
+#first ul li a,
+h5 a,
+#follow{
     font-size: 20px;
     text-decoration:none;
     color: black;
@@ -10,7 +12,9 @@
 
 #first ul li a:hover,
 #second ul li a:hover,
-#third ul li a:hover {
+#third ul li a:hover,
+h5 a:hover {
+    text-decoration:none;
     color: #1A3084;
 }
 
@@ -33,7 +37,7 @@
 }
 
 .social {
-    width: 50%;
+    width: 120px;
 }
 
 .btn-fb {

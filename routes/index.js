@@ -5,6 +5,7 @@ var User = require("../models/user");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
+
 //Rendering Index
 router.get("/",function(req,res){
   res.render("index");
@@ -116,7 +117,6 @@ router.post('/forgot', function(req, res, next) {
   });
 });
 
-
 //Reset Password
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
@@ -177,6 +177,7 @@ router.post('/reset/:token', function(req, res) {
     res.redirect('/');
   });
 });
+
 //middleware
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
