@@ -87,15 +87,41 @@ app.get("/categories/:id",function(req,res){
     if (err) {
       console.log(err);
     }else {
+      console.log(photo);
+      Photo.updateOne({ _id: req.params.id},{ $inc: { views: 1 }, },{new: true },function(err,res){
+        if(err){
+          console.log(err);
+        }else {
+          console.log(res);
+        }
+      })
       res.render("show", {photo: photo});
     }
   })
 });
+//like button
 
+app.post('/categories/:id/act',isLoggedIn, function(req, res) {
+        Photo.updateOne({_id: req.params.id}, {$inc: {like: 1}}, {new: true },function(err,responce){
+          if (err) {
+          console.log(err);
+        }else {
+          console.log(responce);
+        }
+        res.redirect("/categories/" + req.params.id);
+        });
+    });
 /*Photo.create({
-  imgURL : "/images/home/PeopleH.JPG",
+  largeImgURL : "/images/home/PeopleH.JPG",
   tag : "people",
-  discription: "This is a People Image"
+  orientation: true,
+  like : 0,
+  views :0,
+  latitude:12.359080,
+  longitude: 76.593223,
+  tags: ["Window","People","Dark"],
+  imgType: "JPG",
+  description : "This is a People Image"
 },function(err,added){
   if (err) {
     console.log(err);
@@ -104,9 +130,16 @@ app.get("/categories/:id",function(req,res){
   }
 });
 Photo.create({
-  imgURL : "/images/home/RandomH.jpg",
+  largeImgURL : "/images/home/RandomH.jpg",
   tag : "random",
-  discription: "This is a random Image"
+  orientation: false,
+  like : 0,
+  views :0,
+  latitude:12.359080,
+  longitude: 76.593223,
+  tags: ["Table","Chair","Random"],
+  imgType: "JPG",
+  description: "This is a random Image"
 },function(err,added){
   if (err) {
     console.log(err);
@@ -115,9 +148,16 @@ Photo.create({
   }
 });
 Photo.create({
-  imgURL : "/images/home/FloraH.jpg",
+  largeImgURL : "/images/home/FloraH.jpg",
   tag : "floraFauna",
-  discription: "This is a Flora & Fauna Image"
+  orientation: false,
+  like : 0,
+  views :0,
+  latitude:12.359080,
+  longitude: 76.593223,
+  tags: ["Flower","Tree","Leaves"],
+  imgType: "JPG",
+  description: "This is a Flora & Fauna Image"
 },function(err,added){
   if (err) {
     console.log(err);
@@ -126,9 +166,16 @@ Photo.create({
   }
 });
 Photo.create({
-  imgURL : "/images/home/FoodH.jpg",
+  largeImgURL : "/images/home/FoodH.jpg",
   tag : "food",
-  discription: "This is a food Image"
+  orientation: false,
+  like : 0,
+  views :0,
+  latitude:12.359080,
+  longitude: 76.593223,
+  tags: ["Food","Pastry","Cake"],
+  imgType: "JPG",
+  description: "This is a food Image"
 },function(err,added){
   if (err) {
     console.log(err);
@@ -137,9 +184,16 @@ Photo.create({
   }
 });
 Photo.create({
-  imgURL : "/images/home/ArchitectureH.JPG",
+  largeImgURL : "/images/home/ArchitectureH.JPG",
   tag : "architectural",
-  discription: "This is a architectural Image"
+  orientation: true,
+  like : 0,
+  views :0,
+  latitude:12.359080,
+  longitude: 76.593223,
+  tags: ["Building","Structure","Glass"],
+  imgType: "JPG",
+  description: "This is a architectural Image"
 },function(err,added){
   if (err) {
     console.log(err);
@@ -148,9 +202,16 @@ Photo.create({
   }
 });
 Photo.create({
-  imgURL : "/images/home/GoldenH.JPG",
+  largeImgURL : "/images/home/GoldenH.JPG",
   tag : "goldenHour",
-  discription: "This is a goldenHour Image"
+  orientation: true,
+  like : 0,
+  views :0,
+  tags: ["Dawn","Dusk","Sun"],
+  latitude:12.359080,
+  longitude: 76.593223,
+  imgType: "JPG",
+  description : "This is a goldenHour Image"
 },function(err,added){
   if (err) {
     console.log(err);

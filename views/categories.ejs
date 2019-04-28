@@ -2,7 +2,7 @@
 
   <link rel="stylesheet" href="/stylesheets/categories.css">
 
-  <h1 class="text-center">CATEGORIES</h1>
+  <h1 class="text-center display-3">CATEGORIES</h1>
  <div class="text-center">
   <input type="radio" name="group" id="all-btn" value="all" checked="checked">
   <label for="all-btn">All</label>
@@ -22,30 +22,38 @@
   <input type="radio" name="group" id="floraFauna-btn" value="floraFauna">
   <label for="floraFauna-btn">Flora & Fauna</label>
 
+  <input type="radio" name="group" id="fashion-btn" value="fashion">
+  <label for="fashion-btn">Fashion</label>
+
   <div class="gallery">
     <% photos.forEach(function(value){ %>
-            <button type="button" class="gallery-item <%=value.tag%> " data-toggle="modal" data-target="#<%=value.tag%>">
-              <img src="<%=value.imgURL%>" class="gallery-item <%=value.tag%>">
+            <button style="padding: 0;" type="button" class="gallery-item <%=value.tag%> textOverImage" data-toggle="modal" data-text="<%=value.description%>" data-target="#<%=value.tag%>">
+              <img src="<%=value.largeImgURL%>" class="gallery-item <%=value.tag%> rounded" style="border: 4px solid black;">
             </button>
             <!-- Modal -->
             <div class="modal fade" id="<%=value.tag%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
-
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle"><%=value.tag%></h5>
+                    <h5 class="modal-title text-center" id="exampleModalLongTitle">Tags: <%=value.tags%></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
                   <div class="modal-body">
-                    <img src="<%=value.imgURL%>" alt="Test">
+                    <img class="<%= value.orientation === true ? 'horizontal' : 'vertical' %> rounded" src="<%=value.largeImgURL%>" alt="Test">
+                    <!--  -->
                     <p><%=value.description%></p>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <form method="get" action="/categories/<%=value._id%>">
-                    <button type="submit" class="btn btn-primary">More Info</button>
+                    <span class="text-left"><i class="fa fa-eye" aria-hidden="true"></i><%=" "+value.views+" "+"Views"%></span>
+                    <form class="text-left" action="/categories/<%=value._id%>/act" method="post">
+                      <button class="btn" type="submit"><i class="fa fa-thumbs-up" aria-hidden="true">
+                      </i> <%=value.like %></button>
+                    </form>
+                    <button type="button" class="btn btn-secondary"><i class="fa fa-share" aria-hidden="true"></i> Share</button>
+                    <form method="get" action="/categories/<%=value._id%>">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-info" aria-hidden="true"></i> More Info</button>
                   </form>
                   </div>
 
