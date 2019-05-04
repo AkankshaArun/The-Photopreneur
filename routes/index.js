@@ -179,6 +179,8 @@ router.post('/reset/:token', function(req, res) {
   });
 });
 
+
+
 // //Contact Us logic
 // router.post('/contact', function(req, res) {
 //     var transporter = nodemailer.createTransport(smtpTransport({

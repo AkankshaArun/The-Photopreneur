@@ -1,37 +1,52 @@
 body{
     font-size: 14px;
+    background-image: linear-gradient(to bottom, #061161, #4b0052, #68003c, #760023, #780206);
 }
 
 .btn.btn-square {
   border-radius: 0;
 }
 
+.container .d-flex h2{
+    font-family: 'Pacifico', cursive;
+}
+
+.container .d-flex .col p{
+    width: 100%;
+    font-family: 'Arvo', serif;
+    /* justify-content: center; */
+}
+
+
+
 @media only screen and (min-width: 1200px) {
     p {
         font-size:120%;
+        padding: 20%;
+        margin: auto;
     }
 }
 
-@media only screen and (max-width: 1200px),(min-width: 1200px) {
+@media only screen and (max-width: 900px) {
     p {
-        font-size:110%;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    p {
-        font-size:80%;
+        font-size:90%;
+        padding: 10%;
+        margin: auto;
     }
 }
 
 @media only screen and (max-width: 768px) {
     p {
-        font-size:60%;
+        font-size:80%;
+        padding: 10%;
+        margin: auto;
     }
 }
 
 @media only screen and (max-width: 600px) {
     p {
-        font-size:45%;
+        font-size:70%;
+        padding: 10%;
+        margin: auto;
     }
 }
