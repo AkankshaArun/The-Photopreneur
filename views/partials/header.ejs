@@ -16,6 +16,13 @@
   <link rel="stylesheet" href="/stylesheets/contact.css">
   <link rel="stylesheet" href="/stylesheets/register.css">
   <link rel="stylesheet" href="/stylesheets/login.css">
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2216649902832615",
+    enable_page_level_ads: true
+  });
+</script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-custom">
@@ -27,22 +34,24 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        <!-- <li class="nav-item dropdown">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="/categories" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categories
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-white" href="/categories">Food</a>
-            <a class="dropdown-item text-white" href="/categories">People</a>
-            <a class="dropdown-item text-white" href="/categories">Random</a>
-            <a class="dropdown-item text-white" href="/categories">Structures</a>
-            <a class="dropdown-item text-white" href="/categories">Golden Hour</a>
-            <a class="dropdown-item text-white" href="/categories">Flora & Fauna</a>
+              <form class="form-group" action="/categories" method="post">
+            <button class="dropdown-item text-white" name="group" value="food" href="/categories">Food</button>
+            <button class="dropdown-item text-white" name="group" value="people" href="/categories">People</button>
+            <button class="dropdown-item text-white" name="group" value="random" href="/categories">Random</button>
+            <button class="dropdown-item text-white" name="group" value="architectural" href="/categories">Architectural</button>
+            <button class="dropdown-item text-white" name="group" value="goldenHour" href="/categories">Golden Hour</button>
+            <button class="dropdown-item text-white" name="group" value="floraFauna" href="/categories">Flora & Fauna</button>
+              </form>
           </div>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="/categories">Categories</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/categories">Categories</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="/about">About Us</a>
         </li>
