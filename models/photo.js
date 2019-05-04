@@ -1,8 +1,13 @@
 let mongoose = require("mongoose");
-let comment = require("./comment")
 
 var photoSchema = new mongoose.Schema({
-imgURL: String,
+largeImgURL: String,
+smallImgURL: String,
+fileName: String,
+orientation: Boolean,
+//horizontal = true and vertical as false
+color: String,
+//color can be Red,Green,Blue,yellow,mustard,skyblue,purple,white,black,brown
 tag: String,
 description: String,
 cameraDetails : String,
@@ -10,10 +15,20 @@ date : { type: Date, default: Date.now },
 comments : [
   {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "comment"
+    ref: "Comment"
   }
 ],
-like : Number
+like : Number,
+views: {type:Number,default:0},
+tags : [
+  {
+    type: Array
+  }
+],
+latitude: Number,
+longitude: Number,
+imgType: String,
+resolution :String
 });
 //model setup
-module.exports =  new mongoose.model("photo",photoSchema);
+module.exports =  mongoose.model("Photo",photoSchema);

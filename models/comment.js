@@ -1,15 +1,15 @@
 let mongoose = require("mongoose");
 
-let commentSchema = new mongoose.Schema({
+let commentSchema = mongoose.Schema({
   text: String,
+  date: { type: Date, default: Date.now },
   author: {
     id: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User"
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
     },
-    //username: String
+    username: String
   },
-  date: Date
 });
 
-module.exports = new mongoose.model("comment",commentSchema);
+module.exports = mongoose.model("Comment",commentSchema);
