@@ -5,6 +5,7 @@ var User = require("../models/user");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
+var smtpTransport = require('nodemailer-smtp-transport');
 
 //Rendering Index
 router.get("/",function(req,res){
@@ -177,6 +178,36 @@ router.post('/reset/:token', function(req, res) {
     res.redirect('/');
   });
 });
+
+// //Contact Us logic
+// router.post('/contact', function(req, res) {
+//     var transporter = nodemailer.createTransport(smtpTransport({
+//       service: 'gmail',
+//       host: 'smtp.gmail.com',
+//       port: 587,
+//       secure: true,
+//       auth: {
+//         user: 'photopreneur.horizon@gmail.com',
+//         pass: process.env.GMAILPW
+//       }
+//   }));
+//
+//     var mailOptions = {
+//       from: req.body.email,
+//       to: 'photopreneur.horizon@gmail.com',
+//       subject: req.body.message,
+//       text: 'That was easy!'
+//     };
+//
+//     transporter.sendMail(mailOptions, function(err, info){
+//       if (err) {
+//         console.log(err);
+//       } else {
+//           req.flash('success', 'Thanks!');
+//         console.log('Email sent: ' + info.response);
+//       }
+//     });
+// });
 
 //middleware
 function isLoggedIn(req, res, next){

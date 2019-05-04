@@ -5,18 +5,18 @@
     <div class="card-img-overlay">
         <h2 class="pb-2 pt-4">We'd love to hear from you!</h2>
         <h3 class="pb-5">Drop us a line!</h3>
-        <form class="needs-validation content" novalidate>
+        <form class="needs-validation content" novalidate action="/contact" method="post">
           <div class="form-row">
                 <div class="col-6 mb-3">
                   <label for="validationCustom01">First name</label>
-                  <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="" required>
+                  <input type="text" class="form-control" id="validationCustom01" name="firstName" placeholder="First name" value="" required>
                   <div class="invalid-feedback">
                     Please provide a valid name.
                   </div>
                 </div>
                 <div class="col-6 mb-3">
                   <label for="validationCustom02">Last name</label>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="" required>
+                  <input type="text" class="form-control" id="validationCustom02" name="lastName" placeholder="Last name" value="" required>
                   <div class="invalid-feedback">
                     Please provide a valid name.
                   </div>
@@ -25,7 +25,7 @@
             <div class="form-row">
                 <div class=" col-12 mb-3">
                     <label for="exampleInputEmail1">Email Address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value="" required>
+                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" value="" required>
                     <div class="invalid-feedback">
                       Please provide a valid Email ID.
                     </div>
@@ -34,13 +34,13 @@
             <div class="form-row">
                 <div class=" col-12 mb-3">
                     <label for="exampleFormControlTextarea1">Message For Us</label>
-                    <textarea class="form-control" id="message" rows="3" placeholder="Enter message" required></textarea>
+                    <textarea class="form-control" id="message" rows="3" name="message" placeholder="Enter message" required></textarea>
                     <div class="invalid-feedback">
                       Please provide a message.
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary" type="submit">Send <i class="far fa-paper-plane"></i></button>
+            <button class="btn btn-primary" type="submit">Send <i class="fas fa-paper-plane"></i></button>
         </form>
     </div>
 </div>

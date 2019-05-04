@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect("mongodb://localhost:27017/photopreneur",{useNewUrlParser: true});
 var indexRoutes = require("./routes/index");
+// var contactRoutes = require("./routes/contact");
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
