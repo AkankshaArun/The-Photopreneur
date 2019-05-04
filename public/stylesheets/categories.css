@@ -21,41 +21,6 @@ body {
   cursor: pointer;
 }
 
-input {
-  display: none;
-}
-label {
-  display: inline-block;
-  min-width: 100px;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 15px 30px;
-  margin: 5px;
-  cursor: pointer;
-  border: 3px solid transparent;
-  border-radius: 5px;
-  color: #fff;
-  background-color: #333;
-  transition: 0.2s;
-  user-select: none;
-}
-label:hover, label:active {
-  background-color: #222;
-}
-input:checked + label {
-	background-color: #006699;
-  border-color: #333;
-}
-#food-btn:checked ~ .gallery .gallery-item:not(.food),
-#people-btn:checked ~ .gallery .gallery-item:not(.people),
-#architectural-btn:checked ~ .gallery .gallery-item:not(.architectural),
-#floraFauna-btn:checked ~ .gallery .gallery-item:not(.floraFauna),
-#fashion-btn:checked ~ .gallery .gallery-item:not(.fashion),
-#golden-btn:checked ~ .gallery .gallery-item:not(.goldenHour) {
-  display: none;
-}
-/*=========================================================================================================*/
-
 .textOverImage{
     position:relative;
     float:left;
@@ -100,7 +65,6 @@ input:checked + label {
 button img{
   background-size:100%;
 }
-
 .horizontal {
   height: 400px;
   width: 100%;

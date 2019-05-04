@@ -3,6 +3,7 @@ let mongoose = require("mongoose");
 var photoSchema = new mongoose.Schema({
 largeImgURL: String,
 smallImgURL: String,
+fileName: String,
 orientation: Boolean,
 //horizontal = true and vertical as false
 color: String,

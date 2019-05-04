@@ -63,17 +63,18 @@
         </div>
       </div>
 
-      <div class="col-md-8" style="padding : 0;">
+      <div class="col-md-8">
         <div class="figure">
-          <img class="figure-img img-fluid rounded" src="<%=photo.largeImgURL%>" alt="" style=" border: 4px solid black;"">
+          <img class="figure-img img-fluid rounded" src="<%=photo.smallImgURL%>" alt="" style=" border: 4px solid black;">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
               <h4><figcaption class="figure-caption text-left"><i class="fa fa-eye" aria-hidden="true"></i><%=" "+photo.views+" "+"Views"%></figcaption></h4>
               <h4><figcaption class="figure-caption text-left">Category: <%=photo.tag.toUpperCase()%></figcaption></h4>
             </div>
-            <div class="col-md-6">
-              <a class="btn btn-success btn-lg float-none" href="<%=photo.largeImgURL%>" download="RandomH.jpg" role="button">Download <i class="fas fa-angle-double-right"></i></a>
+            <div class="col-md-8">
+              <a class="btn btn-success btn-lg float-none" href="/download/<%=photo._id%>" role="button">Download <i class="fas fa-angle-double-right"></i></a>
               <a class="btn btn-success btn-lg float-none" href="" role="button">Share <i class="fa fa-share" aria-hidden="true"></i></a>
+              <a class="btn btn-success btn-lg float-none" href="" role="button">Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
             </div>
           </div>
           <h6><p><%=photo.description%></p></h6>

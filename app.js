@@ -1,18 +1,21 @@
 const express = require('express'),
 app         = express(),
- bodyParser  = require("body-parser"),
- mongoose    = require("mongoose"),
- flash       = require("connect-flash"),
- passport    = require("passport"),
- LocalStrategy = require("passport-local"),
- methodOverride = require("method-override"),
- Comment     = require("./models/comment"),
- User        = require("./models/user"),
- Photo       = require("./models/photo"),
- ejs = require('ejs');
+bodyParser  = require("body-parser"),
+mongoose    = require("mongoose"),
+flash       = require("connect-flash"),
+passport    = require("passport"),
+LocalStrategy = require("passport-local"),
+methodOverride = require("method-override"),
+Comment     = require("./models/comment"),
+User        = require("./models/user"),
+Photo       = require("./models/photo"),
+seedDB      = require("./seed"),
+ejs = require('ejs');
 // // configure dotenv
 require('dotenv').config();
 var indexRoutes      = require("./routes/index");
+
+//seedDB seedDB();
 
 mongoose.set('useCreateIndex', true);
 app.use(express.static(__dirname + "/public"));
@@ -44,193 +47,106 @@ app.use(function(req, res, next){
   next();});
 
 
-app.get("/categories",function(req,res){
-  Photo.find({},function(err, photos){
-    if (err) {
-      console.log(err);
-    }else {
-      res.render("categories",{photos : photos});
-    }
-  });
-});
-//Rendering Index
-app.get("/",function(req,res){
-  res.render("index");
-});
-
-app.post("/categories/:id/comment",isLoggedIn,function(req,res){
-  Photo.findById(req.params.id,function(error,photo){
-    if (error) {
-      console.log(error);
-      res.redirect("/categories");
-    }else{
-      Comment.create(req.body.comment, function(err,commentData){
-        if (err) {
-          console.log(err);
-        }else {
-          commentData.author.username = req.user.username;
-          commentData.author.id = req.user._id;
-          commentData.save();
-          console.log(commentData);
-          photo.comments.push(commentData);
-          photo.save();
-          res.redirect("/categories/" + photo._id);
-        }
-      })
-    }
-  })
-});
-
-//rendering Comment
-app.get("/categories/:id",function(req,res){
-  Photo.findById(req.params.id).populate("comments").exec(function(err,photo){
-    if (err) {
-      console.log(err);
-    }else {
-      console.log(photo);
-      Photo.updateOne({ _id: req.params.id},{ $inc: { views: 1 }, },{new: true },function(err,res){
-        if(err){
-          console.log(err);
-        }else {
-          console.log(res);
-        }
-      })
-      res.render("show", {photo: photo});
-    }
-  })
-});
-//like button
-
-app.post('/categories/:id/act',isLoggedIn, function(req, res) {
-        Photo.updateOne({_id: req.params.id}, {$inc: {like: 1}}, {new: true },function(err,responce){
-          if (err) {
-          console.log(err);
-        }else {
-          console.log(responce);
-        }
-        res.redirect("/categories/" + req.params.id);
-        });
+  app.get("/categories",function(req,res){
+    Photo.find({},function(err, photos){
+      if (err) {
+        console.log(err);
+      }else {
+        res.render("categories",{photos : photos});
+      }
     });
-/*Photo.create({
-  largeImgURL : "/images/home/PeopleH.JPG",
-  tag : "people",
-  orientation: true,
-  like : 0,
-  views :0,
-  latitude:12.359080,
-  longitude: 76.593223,
-  tags: ["Window","People","Dark"],
-  imgType: "JPG",
-  description : "This is a People Image"
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-Photo.create({
-  largeImgURL : "/images/home/RandomH.jpg",
-  tag : "random",
-  orientation: false,
-  like : 0,
-  views :0,
-  latitude:12.359080,
-  longitude: 76.593223,
-  tags: ["Table","Chair","Random"],
-  imgType: "JPG",
-  description: "This is a random Image"
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-Photo.create({
-  largeImgURL : "/images/home/FloraH.jpg",
-  tag : "floraFauna",
-  orientation: false,
-  like : 0,
-  views :0,
-  latitude:12.359080,
-  longitude: 76.593223,
-  tags: ["Flower","Tree","Leaves"],
-  imgType: "JPG",
-  description: "This is a Flora & Fauna Image"
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-Photo.create({
-  largeImgURL : "/images/home/FoodH.jpg",
-  tag : "food",
-  orientation: false,
-  like : 0,
-  views :0,
-  latitude:12.359080,
-  longitude: 76.593223,
-  tags: ["Food","Pastry","Cake"],
-  imgType: "JPG",
-  description: "This is a food Image"
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-Photo.create({
-  largeImgURL : "/images/home/ArchitectureH.JPG",
-  tag : "architectural",
-  orientation: true,
-  like : 0,
-  views :0,
-  latitude:12.359080,
-  longitude: 76.593223,
-  tags: ["Building","Structure","Glass"],
-  imgType: "JPG",
-  description: "This is a architectural Image"
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});
-Photo.create({
-  largeImgURL : "/images/home/GoldenH.JPG",
-  tag : "goldenHour",
-  orientation: true,
-  like : 0,
-  views :0,
-  tags: ["Dawn","Dusk","Sun"],
-  latitude:12.359080,
-  longitude: 76.593223,
-  imgType: "JPG",
-  description : "This is a goldenHour Image"
-},function(err,added){
-  if (err) {
-    console.log(err);
-  }else {
-    console.log(added);
-  }
-});*/
+  });
 
-function isLoggedIn(req, res, next){
+  app.post("/categories",function(req,res){
+    Photo.find({ tag: req.body.group},function(err, photos){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(req.body.group);
+        res.render("categories",{photos : photos});
+      }
+    });
+  });
+  //Rendering Index
+  app.get("/",function(req,res){
+    res.render("index");
+  });
+
+  app.post("/categories/:id/comment",isLoggedIn,function(req,res){
+    Photo.findById(req.params.id,function(error,photo){
+      if (error) {
+        console.log(error);
+        res.redirect("/categories");
+      }else{
+        Comment.create(req.body.comment, function(err,commentData){
+          if (err) {
+            console.log(err);
+          }else {
+            commentData.author.username = req.user.username;
+            commentData.author.id = req.user._id;
+            commentData.save();
+            console.log(commentData);
+            photo.comments.push(commentData);
+            photo.save();
+            res.redirect("/categories/" + photo._id);
+          }
+        })
+      }
+    })
+  });
+
+  //rendering Comment
+  app.get("/categories/:id",function(req,res){
+    Photo.findById(req.params.id).populate("comments").exec(function(err,photo){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(photo);
+        Photo.updateOne({ _id: req.params.id},{ $inc: { views: 1 }, },{new: true },function(err,res){
+          if(err){
+            console.log(err);
+          }else {
+            console.log(res);
+          }
+        })
+        res.render("show", {photo: photo});
+      }
+    })
+  });
+  //like button
+
+  app.post('/categories/:id/act',isLoggedIn, function(req, res) {
+    Photo.updateOne({_id: req.params.id}, {$inc: {like: 1}}, {new: true },function(err,responce){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(responce);
+      }
+      res.redirect("/categories/" + req.params.id);
+    });
+  });
+  function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
-        return next();
+      return next();
     }
     res.redirect("/login");
-}
+  }
+  //download
+  app.get('/download/:id',isLoggedIn ,function(req, res, next){
+    Photo.findById(req.params.id ,function(err,photo){
+      if (err) {
+        console.log(err);
+      }else {
+        var file = __dirname + "/public/" + photo.smallImgURL;
+        console.log(file);
+        res.download(file); // Set disposition and send it.
+      }
+    });
+  });
 
+  app.use("/", indexRoutes);
+  // app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.use("/", indexRoutes);
-// app.use("/campgrounds/:id/comments", commentRoutes);
-
-app.listen("3000",function(){
-  console.log("Server Is Responding");
-});
+  app.listen("3000",function(){
+    console.log("Server Is Responding");
+  });
