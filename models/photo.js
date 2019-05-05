@@ -31,6 +31,7 @@ tags : [
     type: Array
   }
 ],
+location: String,
 latitude: Number,
 longitude: Number,
 imgType: String,
