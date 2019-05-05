@@ -2,22 +2,24 @@
 
 <link rel="stylesheet" href="/stylesheets/categories.css">
 
-<h1 class="text-center display-3">CATEGORIES</h1>
-<div class="text-center">
+<h1 class="text-center display-3 text-white" style="font-family: 'Pacifico', cursive;">Categories</h1>
+<div class="text-center pt-4">
 
   <form class="form-group" action="/categories" method="post">
-    <button class="btn" id="all-btn" name="group" href="/categories" value="random">Random</button>
-    <button class="btn" id="food-btn" name="group" href="/categories" value="food">Food</button>
-    <button class="btn" id="beach-btn" name="group" href="/categories" value="beach">Beach</button>
-    <button class="btn" id="people-btn" name="group" href="/categories" value="people">People</button>
-    <button class="btn" id="golden-btn" name="group" href="/categories" value="golden">Golden Hour</button>
-    <button class="btn" id="architectural-btn" name="group" href="/categories" value="structures">Architectural</button>
-    <button class="btn" id="floraFauna-btn" name="group" href="/categories" value="nature">Flora & Fauna</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="food-btn" name="group" href="/categories" value="food">Food</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="lights-btn" name="group" href="/categories" value="lights">Lights</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="people-btn" name="group" href="/categories" value="people">People</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="travel-btn" name="group" href="/categories" value="travel">Travel</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="beach-btn" name="group" href="/categories" value="beach">Beaches</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="all-btn" name="group" href="/categories" value="random">Random</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="structures-btn" name="group" href="/categories" value="structures">Structures</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="floraFauna-btn" name="group" href="/categories" value="nature">Nature</button>
+    <button class="btn my-btn btn-primary btn-lg mb-4" id="golden-btn" name="group" href="/categories" value="golden">Golden Hour</button>
   </form>
   <div id="page" class="gallery">
     <% photos.forEach(function(value){ %>
       <button style="padding: 0;border-radius: 0;" type="button" class="gallery-item textOverImage" data-toggle="modal" data-target="#<%=('a' + value.fileName).slice(0,-4)%>">
-        <img src="<%=value.smallImgURL%>" class="gallery-item rounded" style="border: 4px solid black;">
+        <img src="<%=value.smallImgURL%>" class="gallery-item">
         <%console.log(value)%>
       </button>
       <!-- Modal -->
@@ -25,22 +27,16 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-center" id="exampleModalLongTitle">File: <%=value.fileName%></h5>
+              <h5 class="modal-title text-center" id="exampleModalLongTitle">Location: <%=value.location%></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
-              <img class="<%= value.orientation === true ? 'horizontal' : 'vertical' %> rounded" src="<%=value.smallImgURL%>" alt="Test">
-              <!--  -->
+            <div class="modal-body imgbox">
+              <img class="center-fit <%= value.orientation === true ? 'horizontal' : 'vertical' %> rounded img-fluid" src="<%=value.largeImgURL%>" alt="Test" >
             </div>
             <div class="modal-footer">
-              <span class="text-left"><i class="fa fa-eye" aria-hidden="true"></i><%=" "+value.views+" "+"Views"%></span>
-              <form class="text-left" action="/categories/<%=value._id%>/act" method="post">
-                <button class="btn" type="submit"><i class="fa fa-thumbs-up" aria-hidden="true">
-                </i> <%=value.like %></button>
-              </form>
-              <button type="button" class="btn btn-secondary"><i class="fa fa-share" aria-hidden="true"></i> Share</button>
+              <span class="text-left"><i class="fa fa-eye" aria-hidden="true"></i><%=" " + value.views + " " + "Views"%></span>
               <form method="get" action="/categories/<%=value._id%>">
                 <button type="submit" class="btn btn-primary"><i class="fa fa-info" aria-hidden="true"></i> More Info</button>
               </form>
