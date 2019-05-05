@@ -73,49 +73,6 @@
             </div>
             <div class="col-md-8">
               <a class="btn btn-success btn-lg float-none" href="/download/<%=photo._id%>" role="button">Download <i class="fas fa-angle-double-right"></i></a>
-<<<<<<< HEAD
-              <button type="button" class="btn btn-success btn-lg float-none" data-toggle="modal" data-target="#exampleModalLong">
-                Share <i class="fa fa-share" aria-hidden="true"></i>
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content text-center">
-                      <div class="modal-header ">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Say Thanks to The-Photopreneur</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body center-block">
-                        <h5>Our Creaters/Photographers would love to hear from you. We would love to know how you will use the photos.
-                        Show your appreciation by posting on Facebook and following on instagram!</h5>
-                      </div>
-                      <div class=" container btn-group btn-group-lg">
-                        <button class="btn btn-outline-dark" type="button"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/the.photopreneur/" target="_blank">  Instagram</a> </button>
-                        <button class="btn btn-outline-dark" type="button"><i class="fab fa-facebook-f"></i><a href="https://www.facebook.com/The-Photopreneur-414444369119861/" target="_blank"> Facebook</a></button>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <a class="btn btn-success btn-lg float-none" href="" role="button">Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
-              </div>
-            </div>
-          </div>
-          <hr class="hr">
-          <div class="">
-            <h4 class="text-center font-weight-bold">Comments..</h4>
-            <% photo.comments.forEach(function(comment){ %>
-              <div class="row">
-                <div class="col-md-12">
-                  <h5><strong><%=comment.author.username %></strong></h5>
-                  <span class="float-right"><%=comment.date.toDateString() + " " + comment.date.toLocaleTimeString()%></span>
-                  <h6> <%=comment.text%></h6>
-                </div>
-=======
               <a class="btn btn-success btn-lg float-none" href="" role="button">Share <i class="fa fa-share" aria-hidden="true"></i></a>
               <button id="likeBtn" class="btn btn-success btn-lg float-none" href="" onclick="likeCheck()" >Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
             </div>
@@ -131,39 +88,27 @@
                 <h5 class="text-capitalize"><strong><%=comment.author.username %></strong></h5>
                 <span class="float-right"><%=comment.date.toDateString() + " " + comment.date.toLocaleTimeString()%></span>
                 <h6> <%=comment.text%></h6>
->>>>>>> 89a20db8a02537e618a43a7e2800330876b5e24e
               </div>
-              <% }) %>
-              <hr class="hr">
-              <h4 class="text-center font-weight-bold">Your Thoughts!!</h4>
-              <form class="" action="/categories/<%=photo._id%>/comment" method="post">
-                <div class="form-group">
-                  <input class="form-control" type="text" name="comment[text]" placeholder="Thoughts!!">
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-success">Submit!</button>
-                </div>
-              </form>
             </div>
+            <% }) %>
+            <hr class="hr">
+            <h4 class="text-center font-weight-bold">Your Thoughts!!</h4>
+            <form class="" action="/categories/<%=photo._id%>/comment" method="post">
+              <div class="form-group">
+                <input class="form-control" type="text" name="comment[text]" placeholder="Thoughts!!">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success">Submit!</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
+    </div>
 
 
 
 
-<<<<<<< HEAD
-      <script>
-      // Initialize and add the map
-      function initMap() {
-        // The location of Uluru
-        var uluru = {lat: <%=photo.latitude%>, lng: <%=photo.longitude%>};
-        // The map, centered at Uluru
-        var map = new google.maps.Map(
-          document.getElementById('map'), {zoom: 4, center: uluru});
-          // The marker, positioned at Uluru
-          var marker = new google.maps.Marker({position: uluru, map: map});
-=======
     <script>
     // //Like Button logic
     function likeCheck(){
@@ -194,29 +139,21 @@
           var copyText = document.getElementById("inputHtml");
         }else {
           var copyText = document.getElementById("inputText");
->>>>>>> 89a20db8a02537e618a43a7e2800330876b5e24e
         }
-        function copyText(value) {
-          /* Get the text field */
-          if(value == 'html'){
-            var copyText = document.getElementById("inputHtml");
-          }else {
-            var copyText = document.getElementById("inputText");
-          }
-          console.log(copyText);
-          /* Select the text field */
-          copyText.select();
+        console.log(copyText);
+        /* Select the text field */
+        copyText.select();
 
-          /* Copy the text inside the text field */
-          document.execCommand("copy");
+        /* Copy the text inside the text field */
+        document.execCommand("copy");
 
-          /* Alert the copied text */
-          alert("Copied the text: " + copyText.value);
-        }
+        /* Alert the copied text */
+        alert("Copied the text: " + copyText.value);
+      }
 
-        </script>
-        <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=******apiKey*******&callback=initMap">
-        </script>
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=******apiKey*******&callback=initMap">
+      </script>
 
-        <% include partials/footer %>
+      <% include partials/footer %>
