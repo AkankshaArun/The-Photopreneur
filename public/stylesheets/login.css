@@ -3,11 +3,15 @@
   --input-padding-y: .75rem;
 }
 
-/* body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
-} */
-
+body {
+    background: #00000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #061161, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #061161, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Arvo', serif;
+  font-size: 14px;
+}
 .card-signin {
   border: 0;
   border-radius: 1rem;
@@ -39,7 +43,7 @@
 
 
 #forgotBtn {
-  width: 25%;
+  width: 35%;
   position: absolute;
 }
 
@@ -105,7 +109,7 @@
   color: #777;
 }
 
-.btn-google {
+/* .btn-google {
   color: white;
   background-color: #ea4335;
 }
@@ -113,4 +117,4 @@
 .btn-facebook {
   color: white;
   background-color: #3b5998;
-}
+} */

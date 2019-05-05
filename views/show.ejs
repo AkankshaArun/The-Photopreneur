@@ -73,6 +73,7 @@
             </div>
             <div class="col-md-8">
               <a class="btn btn-success btn-lg float-none" href="/download/<%=photo._id%>" role="button">Download <i class="fas fa-angle-double-right"></i></a>
+<<<<<<< HEAD
               <button type="button" class="btn btn-success btn-lg float-none" data-toggle="modal" data-target="#exampleModalLong">
                 Share <i class="fa fa-share" aria-hidden="true"></i>
                 </button>
@@ -114,6 +115,23 @@
                   <span class="float-right"><%=comment.date.toDateString() + " " + comment.date.toLocaleTimeString()%></span>
                   <h6> <%=comment.text%></h6>
                 </div>
+=======
+              <a class="btn btn-success btn-lg float-none" href="" role="button">Share <i class="fa fa-share" aria-hidden="true"></i></a>
+              <button id="likeBtn" class="btn btn-success btn-lg float-none" href="" onclick="likeCheck()" >Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+            </div>
+          </div>
+          <h6><p><%=photo.description%></p></h6>
+        </div>
+        <hr class="hr">
+        <div class="">
+          <h4 class="text-center font-weight-bold">Comments..</h4>
+          <% photo.comments.forEach(function(comment){ %>
+            <div class="row">
+              <div class="col-md-12">
+                <h5 class="text-capitalize"><strong><%=comment.author.username %></strong></h5>
+                <span class="float-right"><%=comment.date.toDateString() + " " + comment.date.toLocaleTimeString()%></span>
+                <h6> <%=comment.text%></h6>
+>>>>>>> 89a20db8a02537e618a43a7e2800330876b5e24e
               </div>
               <% }) %>
               <hr class="hr">
@@ -134,6 +152,7 @@
 
 
 
+<<<<<<< HEAD
       <script>
       // Initialize and add the map
       function initMap() {
@@ -144,6 +163,38 @@
           document.getElementById('map'), {zoom: 4, center: uluru});
           // The marker, positioned at Uluru
           var marker = new google.maps.Marker({position: uluru, map: map});
+=======
+    <script>
+    // //Like Button logic
+    function likeCheck(){
+        console.log("insideLikeCheck");
+        if (currentUser) {
+            // console.log(<%=photo.author.username%>);
+            // console.log(currentUser.username);
+            var element = document.getElementById("likeBtn");
+            <%= photo.like%>=true;
+            element.classList.toggle("mystyle");
+        }
+    }
+
+
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      var uluru = {lat: <%=photo.latitude%>, lng: <%=photo.longitude%>};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+        document.getElementById('map'), {zoom: 4, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+      }
+      function copyText(value) {
+        /* Get the text field */
+        if(value == 'html'){
+          var copyText = document.getElementById("inputHtml");
+        }else {
+          var copyText = document.getElementById("inputText");
+>>>>>>> 89a20db8a02537e618a43a7e2800330876b5e24e
         }
         function copyText(value) {
           /* Get the text field */

@@ -1,5 +1,5 @@
 .site-footer {
-    background-color: #FCF3CF;
+    background-image: linear-gradient(to bottom, #000000, #1d0012, #290125, #2a0440, #061161);
 }
 
 #first ul li a,
@@ -7,7 +7,7 @@ h5 a,
 #follow{
     font-size: 20px;
     text-decoration:none;
-    color: black;
+    color: white;
 }
 
 #first ul li a:hover,
@@ -15,17 +15,21 @@ h5 a,
 #third ul li a:hover,
 h5 a:hover {
     text-decoration:none;
-    color: #1A3084;
+    color: #FFEFDB;
 }
 
 #second ul li a,
 #third ul li a {
     text-decoration:none;
-    color: maroon;
+    color: #67C8FF;
 }
 
 #bottomMost {
-    background-color: #FEF1BE;
+    background-color: Transparent;
+}
+
+#url{
+    color: #B0E2FF;
 }
 
 #first, #second, #third, #fourth {
@@ -34,6 +38,7 @@ h5 a:hover {
 
 .line {
     margin: 0px;
+    background-color: #87CEFF;
 }
 
 .social {

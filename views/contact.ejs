@@ -1,51 +1,17 @@
 <% include partials/header %>
+<link rel="stylesheet" href="/stylesheets/contact.css">
 
 <div class="card bg-dark text-white">
-    <img class="card-img" src="https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image">
+    <img class="card-img" src=".\images\contactUsPrinter.jpg" alt="Card image">
     <div class="card-img-overlay">
-        <h2 class="pb-2 pt-4">We'd love to hear from you!</h2>
-        <h3 class="pb-5">Drop us a line!</h3>
-        <form class="needs-validation content" novalidate>
-          <div class="form-row">
-                <div class="col-6 mb-3">
-                  <label for="validationCustom01">First name</label>
-                  <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="" required>
-                  <div class="invalid-feedback">
-                    Please provide a valid name.
-                  </div>
-                </div>
-                <div class="col-6 mb-3">
-                  <label for="validationCustom02">Last name</label>
-                  <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="" required>
-                  <div class="invalid-feedback">
-                    Please provide a valid name.
-                  </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class=" col-12 mb-3">
-                    <label for="exampleInputEmail1">Email Address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" value="" required>
-                    <div class="invalid-feedback">
-                      Please provide a valid Email ID.
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class=" col-12 mb-3">
-                    <label for="exampleFormControlTextarea1">Message For Us</label>
-                    <textarea class="form-control" id="message" rows="3" placeholder="Enter message" required></textarea>
-                    <div class="invalid-feedback">
-                      Please provide a message.
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Send <i class="far fa-paper-plane"></i></button>
-        </form>
+         <h2 class="pb-2 pt-5">We'd love to hear from you!</h2>
+        <h3 class="pb-2">Drop us a line hassle-free!</h3>
+        <h4 class="pb-2">As You Like It <i class="fas fa-heart"></i></h4>
+        <a class="btn btn-success btn-lg mb-4" href="mailto:photopreneur.horizon@gmail.com" role="button">Contact Us <i class="fas fa-paper-plane"></i></a>
     </div>
 </div>
 
-<script>
+<!-- <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
   'use strict';
@@ -64,9 +30,45 @@
     });
   }, false);
 })();
-</script>
+</script> -->
 
 
-
+<!--<form class="needs-validation content" novalidate action="/contact" method="post">
+  <div class="form-row">
+        <div class="col-6 mb-3">
+          <label for="validationCustom01">First name</label>
+          <input type="text" class="form-control" id="validationCustom01" name="firstName" placeholder="First name" value="" required>
+          <div class="invalid-feedback">
+            Please provide a valid name.
+          </div>
+        </div>
+        <div class="col-6 mb-3">
+          <label for="validationCustom02">Last name</label>
+          <input type="text" class="form-control" id="validationCustom02" name="lastName" placeholder="Last name" value="" required>
+          <div class="invalid-feedback">
+            Please provide a valid name.
+          </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class=" col-12 mb-3">
+            <label for="exampleInputEmail1">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" value="" required>
+            <div class="invalid-feedback">
+              Please provide a valid Email ID.
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class=" col-12 mb-3">
+            <label for="exampleFormControlTextarea1">Message For Us</label>
+            <textarea class="form-control" id="message" rows="3" name="message" placeholder="Enter message" required></textarea>
+            <div class="invalid-feedback">
+              Please provide a message.
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Send <i class="fas fa-paper-plane"></i></button>
+</form> -->
 
 <% include partials/footer %>

@@ -11,11 +11,17 @@ User        = require("./models/user"),
 Photo       = require("./models/photo"),
 seedDB      = require("./seed"),
 ejs = require('ejs');
+var urlencodedParser = bodyParser.urlencoded({extended: false});
+var nodemailer = require("nodemailer");
+
+
+
 // // configure dotenv
 require('dotenv').config();
 var indexRoutes      = require("./routes/index");
 
-//seedDB seedDB();
+//seedDB
+//seedDB();
 
 mongoose.set('useCreateIndex', true);
 app.use(express.static(__dirname + "/public"));
@@ -27,6 +33,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect("mongodb://photopreneur:L3tt#hegameb3gin@mongodb-shard-00-00-ijrzw.mongodb.net:27017,mongodb-shard-00-01-ijrzw.mongodb.net:27017,mongodb-shard-00-02-ijrzw.mongodb.net:27017/photopreneur?ssl=true&replicaSet=MongoDB-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser: true});
 var indexRoutes = require("./routes/index");
+// var contactRoutes = require("./routes/contact");
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -125,6 +132,37 @@ app.use(function(req, res, next){
       res.redirect("/categories/" + req.params.id);
     });
   });
+
+//contact us logic
+// app.post('/contact',urlencodedParser, function(req, res) {
+//     console.log(req.body);
+//     var smtpTransport = nodemailer.createTransport({
+//       service: 'Gmail',
+//       auth: {
+//         user: 'photopreneur.horizon@gmail.com',
+//         pass: process.env.GMAILPW
+//       }
+//     });
+//     var mailOptions = {
+//       to: 'photopreneur.horizon@gmail.com',
+//       from: 'photopreneur.horizon@gmail.com',
+//       subject: 'New Mail from a user',
+//       text: 'Message is from: ' + req.body.firstName +
+//         'User mail ID: ' + req.body.email + '\n Message: ' + req.body.message +'\n'
+//     };
+//     smtpTransport.sendMail(mailOptions, function(err) {
+//         if(err){
+//             req.flash('error',err.message);
+//         } else {
+//             console.log("mail sent");
+//             req.flash('success', 'Thanks for getting in touch!');
+//
+//         }
+//     });
+//     res.render('contact',{data: req.body});
+//
+// });
+
   function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
       return next();
