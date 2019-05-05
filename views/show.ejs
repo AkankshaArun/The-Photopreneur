@@ -74,7 +74,7 @@
             <div class="col-md-8">
               <a class="btn btn-success btn-lg float-none" href="/download/<%=photo._id%>" role="button">Download <i class="fas fa-angle-double-right"></i></a>
               <a class="btn btn-success btn-lg float-none" href="" role="button">Share <i class="fa fa-share" aria-hidden="true"></i></a>
-              <a class="btn btn-success btn-lg float-none" href="" role="button">Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></a>
+              <button id="likeBtn" class="btn btn-success btn-lg float-none" href="" onclick="likeCheck()" >Like <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
             </div>
           </div>
           <h6><p><%=photo.description%></p></h6>
@@ -85,7 +85,7 @@
           <% photo.comments.forEach(function(comment){ %>
             <div class="row">
               <div class="col-md-12">
-                <h5><strong><%=comment.author.username %></strong></h5>
+                <h5 class="text-capitalize"><strong><%=comment.author.username %></strong></h5>
                 <span class="float-right"><%=comment.date.toDateString() + " " + comment.date.toLocaleTimeString()%></span>
                 <h6> <%=comment.text%></h6>
               </div>
@@ -110,6 +110,19 @@
 
 
     <script>
+    // //Like Button logic
+    function likeCheck(){
+        console.log("insideLikeCheck");
+        if (currentUser) {
+            // console.log(<%=photo.author.username%>);
+            // console.log(currentUser.username);
+            var element = document.getElementById("likeBtn");
+            <%= photo.like%>=true;
+            element.classList.toggle("mystyle");
+        }
+    }
+
+
     // Initialize and add the map
     function initMap() {
       // The location of Uluru

@@ -12,14 +12,21 @@ tag: String,
 description: String,
 cameraDetails : String,
 date : { type: Date, default: Date.now },
+// author: {
+//       id: {
+//          type: mongoose.Schema.Types.ObjectId,
+//          ref: "User"
+//       },
+//       username: String
+//    },
 comments : [
   {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Comment"
   }
 ],
-like : Number,
-views: {type:Number,default:0},
+like : { type: Number, default: 0 },
+views: {type :Number, default: 0},
 tags : [
   {
     type: Array
