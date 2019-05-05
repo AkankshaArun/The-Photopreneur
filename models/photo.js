@@ -9,7 +9,6 @@ orientation: Boolean,
 color: String,
 //color can be Red,Green,Blue,yellow,mustard,skyblue,purple,white,black,brown
 tag: String,
-description: String,
 cameraDetails : String,
 date : { type: Date, default: Date.now },
 comments : [

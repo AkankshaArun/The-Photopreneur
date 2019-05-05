@@ -8,1595 +8,815 @@ function seedDB(){
     if(err){
       console.log(err);
     }
-    console.log("removed Photos")
+    console.log("removed Photos");
     Photo.create({
-      smallImgURL : "/images/home/PeopleH.JPG",
-      fileName: "PeopleH.JPG",
+      largeImgURL : "/images/Beaches/img_beach_1.JPG",
+      smallImgURL : "/images/smallImages/img_beach_small1.JPG",
+      fileName: "img_beach_small1.JPG",
+      tag : "beach",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Beaches/img_beach_2.JPG",
+      smallImgURL : "/images/smallImages/img_beach_small2.JPG",
+      fileName: "img_beach_small2.JPG",
+      tag : "beach",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Beaches/img_beach_3.JPG",
+      smallImgURL : "/images/smallImages/img_beach_small3.JPG",
+      fileName: "img_beach_small3.JPG",
+      tag : "beach",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Beaches/img_beach_4.JPG",
+      smallImgURL : "/images/smallImages/img_beach_small4.JPG",
+      fileName: "img_beach_small4.JPG",
+      tag : "beach",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Beaches/img_beach_5.JPG",
+      smallImgURL : "/images/smallImages/img_beach_small5.JPG",
+      fileName: "img_beach_small5.JPG",
+      tag : "beach",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Flora/img_flora1.JPG",
+      smallImgURL : "/images/smallImages/img_flora_small_1.JPG",
+      fileName: "img_flora_small1.JPG",
+      tag : "nature",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Flora/img_flora2.JPG",
+      smallImgURL : "/images/smallImages/img_flora_small_2.JPG",
+      fileName: "img_flora_small2.JPG",
+      tag : "nature",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });
+    Photo.create({
+      largeImgURL : "/images/Flora/img_flora3.JPG",
+      smallImgURL : "/images/smallImages/img_flora_small_3.JPG",
+      fileName: "img_flora_small3.JPG",
+      tag : "nature",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });
+    Photo.create({
+      largeImgURL : "/images/Flora/img_flora4.JPG",
+      smallImgURL : "/images/smallImages/img_flora_small_4.JPG",
+      fileName: "img_flora_small4.JPG",
+      tag : "nature",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });
+    Photo.create({
+      largeImgURL : "/images/Flora/img_flora5.JPG",
+      smallImgURL : "/images/smallImages/img_flora_small_5.JPG",
+      fileName: "img_flora_small5.JPG",
+      tag : "nature",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });
+    Photo.create({
+      largeImgURL : "/images/Food/img_food_1.JPG",
+      smallImgURL : "/images/smallImages/img_food_small_1.JPG",
+      fileName: "img_food_small1.JPG",
+      tag : "food",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Food/img_food_2.JPG",
+      smallImgURL : "/images/smallImages/img_food_small_2.JPG",
+      fileName: "img_food_small2.JPG",
+      tag : "food",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Food/img_food_3.JPG",
+      smallImgURL : "/images/smallImages/img_food_small_3.JPG",
+      fileName: "img_food_small3.JPG",
+      tag : "food",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Food/img_food_4.JPG",
+      smallImgURL : "/images/smallImages/img_food_small_4.JPG",
+      fileName: "img_food_small4.JPG",
+      tag : "food",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Food/img_food_5.JPG",
+      smallImgURL : "/images/smallImages/img_food_small_5.JPG",
+      fileName: "img_food_small5.JPG",
+      tag : "food",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Random/img_random_1.JPG",
+      smallImgURL : "/images/smallImages/img_random_small_1.JPG",
+      fileName: "img_random_small1.JPG",
+      tag : "random",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Random/img_random_2.JPG",
+      smallImgURL : "/images/smallImages/img_random_small_2.JPG",
+      fileName: "img_random_small2.JPG",
+      tag : "random",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Random/img_random_3.JPG",
+      smallImgURL : "/images/smallImages/img_random_small_3.JPG",
+      fileName: "img_random_small3.JPG",
+      tag : "random",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Random/img_random_4.JPG",
+      smallImgURL : "/images/smallImages/img_random_small_4.JPG",
+      fileName: "img_random_small4.JPG",
+      tag : "random",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Random/img_random_5.JPG",
+      smallImgURL : "/images/smallImages/img_random_small_5.JPG",
+      fileName: "img_random_small5.JPG",
+      tag : "random",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Travel/img_travel_1.JPG",
+      smallImgURL : "/images/smallImages/img_travel_small_1.JPG",
+      fileName: "img_travel_small1.JPG",
+      tag : "travel",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Travel/img_travel_2.JPG",
+      smallImgURL : "/images/smallImages/img_travel_small_2.JPG",
+      fileName: "img_travel_small2.JPG",
+      tag : "travel",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Travel/img_travel_3.JPG",
+      smallImgURL : "/images/smallImages/img_travel_small_3.JPG",
+      fileName: "img_travel_small3.JPG",
+      tag : "travel",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Travel/img_travel_4.JPG",
+      smallImgURL : "/images/smallImages/img_travel_small_4.JPG",
+      fileName: "img_travel_small4.JPG",
+      tag : "travel",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Travel/img_travel_5.JPG",
+      smallImgURL : "/images/smallImages/img_travel_small_5.JPG",
+      fileName: "img_travel_small5.JPG",
+      tag : "travel",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Structures/img_structures_1.JPG",
+      smallImgURL : "/images/smallImages/img_structures_small_1.JPG",
+      fileName: "img_stuctures_small1.JPG",
+      tag : "structures",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Structures/img_structures_2.JPG",
+      smallImgURL : "/images/smallImages/img_structures_small_2.JPG",
+      fileName: "img_stuctures_small2.JPG",
+      tag : "structures",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Structures/img_structures_3.JPG",
+      smallImgURL : "/images/smallImages/img_structures_small_3.JPG",
+      fileName: "img_stuctures_small3.JPG",
+      tag : "structures",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Structures/img_structures_4.JPG",
+      smallImgURL : "/images/smallImages/img_structures_small_4.JPG",
+      fileName: "img_stuctures_small4.JPG",
+      tag : "structures",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/Structures/img_structures_5.JPG",
+      smallImgURL : "/images/smallImages/img_structures_small_5.JPG",
+      fileName: "img_stuctures_small5.JPG",
+      tag : "structures",
+      orientation: true,
+      like : 0,
+      views :0,
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
+    },function(err,added){
+      if (err) {
+        console.log(err);
+      }else {
+        console.log(added);
+      }
+    });Photo.create({
+      largeImgURL : "/images/People/img_people_1.JPG",
+      smallImgURL : "/images/smallImages/img_people_small_1.JPG",
+      fileName: "img_people_small1.JPG",
       tag : "people",
       orientation: true,
       like : 0,
       views :0,
-      latitude:12.359080,
-      longitude: 76.593223,
-      tags: ["Window","People","Dark"],
-      imgType: "JPG",
-      description : "This is a People Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });
-
-    Photo.create({
-      smallImgURL : "/images/home/RandomH.jpg",
-      fileName: "RandomH.jpg",
-      tag : "random",
-      orientation: false,
-      like : 0,
-      views :0,
-      latitude:12.359080,
-      longitude: 76.593223,
-      tags: ["Table","Chair","Random"],
-      imgType: "JPG",
-      description: "This is a random Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });
-    Photo.create({
-      smallImgURL : "/images/home/FloraH.jpg",
-      fileName: "FloraH.jpg",
-      tag : "floraFauna",
-      orientation: false,
-      like : 0,
-      views :0,
-      latitude:12.359080,
-      longitude: 76.593223,
-      tags: ["Flower","Tree","Leaves"],
-      imgType: "JPG",
-      description: "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });
-    Photo.create({
-      smallImgURL : "/images/home/FoodH.jpg",
-      fileName: "FoodH.jpg",
-      tag : "food",
-      orientation: false,
-      like : 0,
-      views :0,
-      latitude:12.359080,
-      longitude: 76.593223,
-      tags: ["Food","Pastry","Cake"],
-      imgType: "JPG",
-      description: "This is a food Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });
-    Photo.create({
-      smallImgURL : "/images/home/ArchitectureH.JPG",
-      fileName: "ArchitectureH.JPG",
-      tag : "architectural",
-      orientation: true,
-      like : 0,
-      views :0,
-      latitude:12.359080,
-      longitude: 76.593223,
-      tags: ["Building","Structure","Glass"],
-      imgType: "JPG",
-      description: "This is a architectural Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });
-    Photo.create({
-      smallImgURL : "/images/home/GoldenH.JPG",
-      fileName: "GoldenH.JPG",
-      tag : "goldenHour",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a goldenHour Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });
-    Photo.create({
-      smallImgURL : "/images/smallImages/1Beach-Small.jpg",
-      fileName: "1Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });
-    Photo.create({
-      smallImgURL : "/images/smallImages/2Beach-Small.jpg",
-      fileName: "2Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });
-    Photo.create({
-      smallImgURL : "/images/smallImages/3Beach-Small.jpg",
-      fileName: "3Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/4Beach-Small.jpg",
-      fileName: "4Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/5Beach-Small.jpg",
-      fileName: "5Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/6Beach-Small.jpg",
-      fileName: "6Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/7Beach-Small.jpg",
-      fileName: "7Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/8Beach-Small.jpg",
-      fileName: "8Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/9Beach-Small.jpg",
-      fileName: "9Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/10Beach-Small.jpg",
-      fileName: "10Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/11Beach-Small.jpg",
-      fileName: "11Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/12Beach-Small.jpg",
-      fileName: "12Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/13Beach-Small.jpg",
-      fileName: "13Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/14Beach-Small.jpg",
-      fileName: "14Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/15Beach-Small.jpg",
-      fileName: "15Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/16Beach-Small.jpg",
-      fileName: "16Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/17Beach-Small.jpg",
-      fileName: "17Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/18Beach-Small.jpg",
-      fileName: "18Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/19Beach-Small.jpg",
-      fileName: "19Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/20Beach-Small.jpg",
-      fileName: "20Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/21Beach-Small.jpg",
-      fileName: "21Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/22Beach-Small.jpg",
-      fileName: "22Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });
-    Photo.create({
-      smallImgURL : "/images/smallImages/23Beach-Small.jpg",
-      fileName: "23Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/24Beach-Small.jpg",
-      fileName: "24Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/25Beach-Small.jpg",
-      fileName: "25Beach-Small.jpg",
-      tag : "beach",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Beach Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/1Flora-Small.jpg",
-      fileName: "1Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/2Flora-Small.jpg",
-      fileName: "2Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/3Flora-Small.jpg",
-      fileName: "3Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/4Flora-Small.jpg",
-      fileName: "4Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/5Flora-Small.jpg",
-      fileName: "5Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/6Flora-Small.jpg",
-      fileName: "6Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/7Flora-Small.jpg",
-      fileName: "7Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/8Flora-Small.jpg",
-      fileName: "8Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/9Flora-Small.jpg",
-      fileName: "9Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/10Flora-Small.jpg",
-      fileName: "10Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/11Flora-Small.jpg",
-      fileName: "11Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/12Flora-Small.jpg",
-      fileName: "12Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/13Flora-Small.jpg",
-      fileName: "13Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/14Flora-Small.jpg",
-      fileName: "14Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/15Flora-Small.jpg",
-      fileName: "15Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/16Flora-Small.jpg",
-      fileName: "16Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/17Flora-Small.jpg",
-      fileName: "17Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/18Flora-Small.jpg",
-      fileName: "18Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/19Flora-Small.jpg",
-      fileName: "19Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/20Flora-Small.jpg",
-      fileName: "20Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/21Flora-Small.jpg",
-      fileName: "21Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/22Flora-Small.jpg",
-      fileName: "22Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/23Flora-Small.jpg",
-      fileName: "23Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/24Flora-Small.jpg",
-      fileName: "24Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/25Flora-Small.jpg",
-      fileName: "25Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/26Flora-Small.jpg",
-      fileName: "26Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/27Flora-Small.jpg",
-      fileName: "27Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/28Flora-Small.jpg",
-      fileName: "28Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/29Flora-Small.jpg",
-      fileName: "29Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/30Flora-Small.jpg",
-      fileName: "30Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/31Flora-Small.jpg",
-      fileName: "31Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/32Flora-Small.jpg",
-      fileName: "32Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/33Flora-Small.jpg",
-      fileName: "33Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/34Flora-Small.jpg",
-      fileName: "34Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/35Flora-Small.jpg",
-      fileName: "35Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/36Flora-Small.jpg",
-      fileName: "36Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/37Flora-Small.jpg",
-      fileName: "37Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/38Flora-Small.jpg",
-      fileName: "38Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/39Flora-Small.jpg",
-      fileName: "39Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/40Flora-Small.jpg",
-      fileName: "40Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/41Flora-Small.jpg",
-      fileName: "41Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/42Flora-Small.jpg",
-      fileName: "42Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/43Flora-Small.jpg",
-      fileName: "43Flora-Small.jpg",
-      tag : "floraFauna",
-      orientation: true,
-      like : 0,
-      views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
-    },function(err,added){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(added);
-      }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/44Flora-Small.jpg",
-      fileName: "44Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/People/img_people_2.JPG",
+      smallImgURL : "/images/smallImages/img_people_small_2.JPG",
+      fileName: "img_people_small2.JPG",
+      tag : "people",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/45Flora-Small.jpg",
-      fileName: "45Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/People/img_people_3.JPG",
+      smallImgURL : "/images/smallImages/img_people_small_3.JPG",
+      fileName: "img_people_small3.JPG",
+      tag : "people",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/46Flora-Small.jpg",
-      fileName: "46Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/People/img_people_4.JPG",
+      smallImgURL : "/images/smallImages/img_people_small_4.JPG",
+      fileName: "img_people_small4.JPG",
+      tag : "people",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/47Flora-Small.jpg",
-      fileName: "47Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/People/img_people_5.JPG",
+      smallImgURL : "/images/smallImages/img_people_small_5.JPG",
+      fileName: "img_people_small5.JPG",
+      tag : "people",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/48Flora-Small.jpg",
-      fileName: "48Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/Lights/img_lights_1.JPG",
+      smallImgURL : "/images/smallImages/img_lights_small_1.JPG",
+      fileName: "img_people_small1.JPG",
+      tag : "lights",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/49Flora-Small.jpg",
-      fileName: "49Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/Lights/img_lights_2.JPG",
+      smallImgURL : "/images/smallImages/img_lights_small_2.JPG",
+      fileName: "img_people_small2.JPG",
+      tag : "lights",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/50Flora-Small.jpg",
-      fileName: "50Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/Lights/img_lights_3.JPG",
+      smallImgURL : "/images/smallImages/img_lights_small_3.JPG",
+      fileName: "img_people_small3.JPG",
+      tag : "lights",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/51Flora-Small.jpg",
-      fileName: "51Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/Lights/img_lights_4.JPG",
+      smallImgURL : "/images/smallImages/img_lights_small_4.JPG",
+      fileName: "img_people_small4.JPG",
+      tag : "lights",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/52Flora-Small.jpg",
-      fileName: "52Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/Lights/img_lights_5.JPG",
+      smallImgURL : "/images/smallImages/img_lights_small_5.JPG",
+      fileName: "img_people_small5.JPG",
+      tag : "lights",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/53Flora-Small.jpg",
-      fileName: "53Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/GoldenHour/img_golden_1.JPG",
+      smallImgURL : "/images/smallImages/img_golden_small_1.JPG",
+      fileName: "img_golden_small5.JPG",
+      tag : "golden",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/54Flora-Small.jpg",
-      fileName: "54Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/GoldenHour/img_golden_2.JPG",
+      smallImgURL : "/images/smallImages/img_golden_small_2.JPG",
+      fileName: "img_golden_small2.JPG",
+      tag : "golden",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/55Flora-Small.jpg",
-      fileName: "55Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/GoldenHour/img_golden_3.JPG",
+      smallImgURL : "/images/smallImages/img_golden_small_3.JPG",
+      fileName: "img_golden_small3.JPG",
+      tag : "golden",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/56Flora-Small.jpg",
-      fileName: "56Flora-Small.jpg",
-      tag : "floraFauna",
+    });Photo.create({
+      largeImgURL : "/images/GoldenHour/img_golden_4.JPG",
+      smallImgURL : "/images/smallImages/img_golden_small_4.JPG",
+      fileName: "img_golden_small4.JPG",
+      tag : "golden",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Flora & Fauna Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
       }else {
         console.log(added);
       }
-    });    Photo.create({
-      smallImgURL : "/images/smallImages/1Food-Small.jpg",
-      fileName: "1Food-Small.jpg",
-      tag : "food",
+    });Photo.create({
+      largeImgURL : "/images/GoldenHour/img_golden_5.JPG",
+      smallImgURL : "/images/smallImages/img_golden_small_5.JPG",
+      fileName: "img_golden_small5.JPG",
+      tag : "golden",
       orientation: true,
       like : 0,
       views :0,
-      tags: ["Dawn","Dusk","Sun"],
-      latitude:12.359080,
-      longitude: 76.593223,
-      imgType: "JPG",
-      description : "This is a Food Image"
+      tags: ["Beach","Sea","Dusk","Dawn","Sand"],
+      latitude:12.8913,
+      longitude: 74.8139,
+      imgType: "JPG"
     },function(err,added){
       if (err) {
         console.log(err);
