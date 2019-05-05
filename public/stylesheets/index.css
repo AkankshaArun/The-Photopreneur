@@ -36,7 +36,7 @@
 }
 @media only screen and (max-width: 600px) {
   .card-img-top{
-    height : 500px;
+    height : 300px;
 }
 }
 body {
@@ -46,8 +46,33 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Arvo', serif;
+  font-size: 14px;
 }
 
 .card-body {
   background: #fff3e0;
+}
+
+@media only screen and (min-width: 1200px) {
+    p {
+        font-size:100%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    p {
+        font-size:90%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    p {
+        font-size:80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    p {
+        font-size:70%;
+    }
 }
