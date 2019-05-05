@@ -10,9 +10,9 @@
     <button class="btn" id="food-btn" name="group" href="/categories" value="food">Food</button>
     <button class="btn" id="beach-btn" name="group" href="/categories" value="beach">Beach</button>
     <button class="btn" id="people-btn" name="group" href="/categories" value="people">People</button>
-    <button class="btn" id="golden-btn" name="group" href="/categories" value="goldenHour">Golden Hour</button>
-    <button class="btn" id="architectural-btn" name="group" href="/categories" value="architectural">Architectural</button>
-    <button class="btn" id="floraFauna-btn" name="group" href="/categories" value="floraFauna">Flora & Fauna</button>
+    <button class="btn" id="golden-btn" name="group" href="/categories" value="golden">Golden Hour</button>
+    <button class="btn" id="architectural-btn" name="group" href="/categories" value="structures">Architectural</button>
+    <button class="btn" id="floraFauna-btn" name="group" href="/categories" value="nature">Flora & Fauna</button>
   </form>
   <div id="page" class="gallery">
     <% photos.forEach(function(value){ %>
@@ -33,7 +33,6 @@
             <div class="modal-body">
               <img class="<%= value.orientation === true ? 'horizontal' : 'vertical' %> rounded" src="<%=value.smallImgURL%>" alt="Test">
               <!--  -->
-              <p><%=value.description%></p>
             </div>
             <div class="modal-footer">
               <span class="text-left"><i class="fa fa-eye" aria-hidden="true"></i><%=" "+value.views+" "+"Views"%></span>
