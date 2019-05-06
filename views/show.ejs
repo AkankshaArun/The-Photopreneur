@@ -3,140 +3,130 @@
 
 
 <div class="container">
-  <br class="br">
-  <div class="row">
-      <div class="col-md-8">
-        <div class="figure ">
-          <img class="figure-img img-fluid rounded" src="<%=photo.smallImgURL%>" alt="" style="">
-          <div class="row">
-            <div class="col-md-12">
-              <a class="btn btn-sm btn-success float-right" href="/download/<%=photo._id%>" role="button">Download <i class="fas fa-angle-double-right"></i></a>
-              <a class="btn btn-sm btn-success float-right mr-3" href="" role="button">Share <i class="fa fa-share" aria-hidden="true"></i></a>
-              <h4 class="figure-caption float-right pt-2 mr-3"><i class="fa fa-eye" aria-hidden="true"></i><%=" "+photo.views+" "+"Views "%></h4>
+    <br class="br">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="flex-row d-flex justify-content-center">
+                <img class="figure-img img-fluid rounded" src="<%=photo.smallImgURL%>" alt="" style="">
             </div>
-          </div>
-          <h6><p><%=photo.description%></p></h6>
-        </div>
-        <hr class="hr">
-        <div class="">
-          <h4 class="font-weight-bold"><span class="badge badge-dark">Comments <span class="badge badge-light"><%= photo.comments.length %></span></span></h4>
-          <% photo.comments.forEach(function(comment){ %>
-            <div class="row">
-              <div class="col-md-12">
-                <h5 class="text-capitalize"><strong><%=comment.author.username %></strong></h5>
-                <span class="float-right"><%=comment.date.toDateString().slice(4,) + " " + comment.date.toLocaleTimeString()%></span>
-                <h6> <%=comment.text%></h6>
-              </div>
-            </div>
-            <% }) %>
-            <hr class="hr">
-            <h4 class="text-center font-weight-bold">Your Thoughts!!</h4>
-            <form class="" action="/categories/<%=photo._id%>/comment" method="post">
-              <div class="form-group">
-                <input class="form-control" type="text" name="comment[text]" placeholder="Thoughts!!">
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-success">Submit!</button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <!-- <p class="lead text-center">More Photos from <%=photo.tag.toUpperCase()%> </p> -->
-          <div class="">
-            <hr>
-            <!-- add images here -->
-          </div>
-          <div>
-            <h3 class="text-center">Location</h3>
-            <hr>
-            <div class="rounded"id="map" style="width: 100%; height: 400px;background-color: grey;"></div>
-          </div>
-          <hr>
-          <p class="lead text-center">Tags Used</p>
-          <hr>
-          <% photo.tags.forEach(function(tag){ %>
-            <div class="badge badge- text-wrap text-center m-1" style="width: 6rem;">
-              <h6><%=tag%></h6>
-            </div>
-            <% }) %>
-            <div class="">
-              <hr>
-              <h3 class="text-center">Image Details</h3>
-              <hr>
-              <strong>Resolution : <%=photo.resolution%></strong><br>
-              <strong>Image Type : <%=photo.imgType%></strong><br>
-              <strong>Camera Details</strong> : <p><%=photo.cameraDetails%></p>
+            <div class="flex-row d-flex justify-content-center">
+                <div class="col col-md-12 d-flex justify-content-center">
+                    <a class="btn btn-sm btn-success mr-3" href="/download/<%=photo._id%>" role="button">Download <i class="fas fa-angle-double-right"></i></a>
+                    <a class="btn btn-sm btn-success mr-3" href="" role="button">Share <i class="fa fa-share" aria-hidden="true"></i></a>
+                    <h4 class="figure-caption float-right pt-2 mr-3 text-white"><i class="fa fa-eye" aria-hidden="true"></i><%=" "+photo.views+" "+"Views "%></h4>
+                </div>
             </div>
             <div class="">
-              <hr>
-              <h5 class="text-center">If you would like to credit the Photo, here are some ways you can do so!!</h5>
-              <ul class="nav nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-text" role="tab" aria-controls="nav-home" aria-selected="true">Text</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-image" role="tab" aria-controls="nav-profile" aria-selected="false">Image</a>
-                </li>
-              </ul>
-              <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-text" role="tabpanel" aria-labelledby="nav-home-tab">
-                  <strong>Preview:</strong><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The Photopreneur</a>
-                  <hr>
-                  <strong>Click below to copy the code:</strong>
-                  <textarea  onclick="copyText('text')" id="inputText" class="form-control" name="name" rows="6" cols="50"><span class="btn btn-link" ><span><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The-Photopreneur</a></span></span>
-                  </textarea>
+                <% if(photo.comments.length!=0){ %>
+                    <hr class="hr">
+                    <h4 class="font-weight-normal"><span class="badge badge-dark font-weight-normal">Comments <span class="badge badge-light"><%= photo.comments.length %></span></span></h4>
+                    <% photo.comments.forEach(function(comment){ %>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5 class="text-capitalize"><strong><%=comment.author.username %></strong></h5>
+                                <span class="float-right"><%=comment.date.toDateString().slice(4,) + " " + comment.date.toLocaleTimeString()%></span>
+                                <h6> <%=comment.text%></h6>
+                            </div>
+                        </div>
+                        <% }) %>
+                        <hr class="hr">
+                        <% } %>
+
+                        <h4 class="text-center font-weight-bold pt-2">Your Thoughts!!</h4>
+                        <form class="" action="/categories/<%=photo._id%>/comment" method="post">
+                            <div class="form-group  pt-2">
+                                <input class="form-control" type="text" name="comment[text]" placeholder="Thoughts!!">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Submit!</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="tab-pane fade" id="nav-image" role="tabpanel" aria-labelledby="nav-profile-tab">
-                  <strong>Preview</strong>
-                  <hr>
-                  <img class="" src="http://localhost:3000/<%=photo.largeImgURL%>" alt="" style="margin: 0px; width: 20%;height: 20%;">
-                  <hr>
-                  <strong>Click below to copy the code:</strong>
-                  <textarea onclick="copyText('html')" id="inputHtml" class="form-control"name="name" rows="10" cols="50"><span><span style="margin:0 0 20px 0;display:inline-block;vertical-align:middle"><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>" style="text-decoration:none;font-size:10px;margin:0"><img src="http://localhost:3000<%=photo.largeImgURL%>" style="margin:0;width:100%" alt=""/><p style="font-size:12px;margin:0">The Photopreneur</p></a></span></span></textarea>
+                <div class="col-md-4">
+                    <div>
+                        <h3 class="text-center">Location</h3>
+                        <hr>
+                        <div class="rounded" id="map" style="width: 100%; height: 400px;background-color: grey;"></div>
+                    </div>
+
+                    <p class="lead text-center pt-4">Tags Used</p>
+                    <hr>
+                    <% photo.tags.forEach(function(tag){ %>
+                        <div class="badge badge- text-wrap text-center m-1" style="width: 6rem;">
+                            <h6><%=tag%></h6>
+                        </div>
+                        <% }) %>
+
+                        <div class="">
+                            <hr>
+                            <h5 class="text-center">If you would like to credit the Photo, here are some ways you can do so!!</h5>
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-text" role="tab" aria-controls="nav-home" aria-selected="true">Text</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-image" role="tab" aria-controls="nav-profile" aria-selected="false">Image</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-text" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <strong>Preview:</strong><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The Photopreneur</a>
+                                    <hr>
+                                    <strong>Click below to copy the code:</strong>
+                                    <textarea  onclick="copyText('text')" id="inputText" class="form-control" name="name" rows="6" cols="50"><span class="btn btn-link" ><span><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The-Photopreneur</a></span></span>
+                                    </textarea>
+                                </div>
+                                <div class="tab-pane fade" id="nav-image" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <strong>Preview</strong>
+                                    <hr>
+                                    <img class="" src="http://localhost:3000/<%=photo.largeImgURL%>" alt="" style="margin: 0px; width: 20%;height: 20%;">
+                                    <hr>
+                                    <strong>Click below to copy the code:</strong>
+                                    <textarea onclick="copyText('html')" id="inputHtml" class="form-control"name="name" rows="10" cols="50"><span><span style="margin:0 0 20px 0;display:inline-block;vertical-align:middle"><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>" style="text-decoration:none;font-size:10px;margin:0"><img src="http://localhost:3000<%=photo.largeImgURL%>" style="margin:0;width:100%" alt=""/><p style="font-size:12px;margin:0">The Photopreneur</p></a></span></span></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
             </div>
-          </div>
-
-      </div>
-    </div>
 
 
 
 
-    <script>
-    // Initialize and add the map
-    function initMap() {
-      // The location of Uluru
-      var uluru = {lat: <%=photo.latitude%>, lng: <%=photo.longitude%>};
-      // The map, centered at Uluru
-      var map = new google.maps.Map(
-        document.getElementById('map'), {zoom: 4, center: uluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
-      }
-      function copyText(value) {
-        /* Get the text field */
-        if(value == 'html'){
-          var copyText = document.getElementById("inputHtml");
-        }else {
-          var copyText = document.getElementById("inputText");
-        }
-        console.log(copyText);
-        /* Select the text field */
-        copyText.select();
+            <script>
+                // Initialize and add the map
+                function initMap() {
+                    // The location of Uluru
+                    var uluru = {lat: <%=photo.latitude%>, lng: <%=photo.longitude%>};
+                    // The map, centered at Uluru
+                    var map = new google.maps.Map(
+                    document.getElementById('map'), {zoom: 4, center: uluru});
+                    // The marker, positioned at Uluru
+                    var marker = new google.maps.Marker({position: uluru, map: map});
+                }
+                function copyText(value) {
+                    /* Get the text field */
+                    if(value == 'html'){
+                        var copyText = document.getElementById("inputHtml");
+                    }else {
+                        var copyText = document.getElementById("inputText");
+                    }
+                    console.log(copyText);
+                    /* Select the text field */
+                    copyText.select();
 
-        /* Copy the text inside the text field */
-        document.execCommand("copy");
+                    /* Copy the text inside the text field */
+                    document.execCommand("copy");
 
-        /* Alert the copied text */
-        alert("Copied the text: " + copyText.value);
-      }
+                    /* Alert the copied text */
+                    alert("Copied the text: " + copyText.value);
+                }
 
-      </script>
-      <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=******apiKey*******&callback=initMap">
-      </script>
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=******apiKey*******&callback=initMap">
+        </script>
 
-      <% include partials/footer %>
+        <% include partials/footer %>

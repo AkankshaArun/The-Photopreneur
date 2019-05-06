@@ -7,4 +7,11 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-family: 'Arvo', serif;
+  color: white;
+}
+
+hr{
+    color: white;
+    border-color: white;
+    background-color: white;
 }
