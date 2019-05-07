@@ -12,7 +12,7 @@
       </div>
       <div class="flex-row d-flex justify-content-center">
         <div class="col col-md-12 d-flex justify-content-center">
-          <a class="btn btn-sm btn-success mr-3" href="/download/<%=photo._id%>" role="button">Download <i class="fas fa-angle-double-right"></i></a>
+          <a class="btn btn-sm btn-success mr-3" href="/download/<%=photo._id%>" role="button">Download <i class="fas fa-download"></i></a>
 
 
 
@@ -46,13 +46,12 @@
           <h4 class="figure-caption float-right pt-2 mr-3 text-white"><i class="fa fa-eye" aria-hidden="true"></i><%=" "+photo.views+" "+"Views "%></h4>
         </div>
       </div>
-      <div class="">
+      <div class="opaque px-4 py-3 m-4 rounded">
         <% if(photo.comments.length!=0){ %>
-          <hr class="hr">
           <h4 class="font-weight-normal"><span class="badge badge-dark font-weight-normal">Comments <span class="badge badge-light"><%= photo.comments.length %></span></span></h4>
           <% photo.comments.forEach(function(comment){ %>
-            <div class="row">
-              <div class="col-md-12">
+            <div class="row px-2">
+              <div class="col-md-12 pt-2">
                 <h5 class="text-capitalize"><strong><%=comment.author.username %></strong></h5>
                 <span class="float-right"><%=comment.date.toDateString().slice(4,) + " " + comment.date.toLocaleTimeString()%></span>
                 <h6> <%=comment.text%></h6>
@@ -68,28 +67,31 @@
                 <input class="form-control" type="text" name="comment[text]" placeholder="Thoughts!!">
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-success">Submit!</button>
+                <button type="submit" class="btn btn-primary">Submit!</button>
               </div>
             </form>
           </div>
         </div>
         <div class="col-md-4">
-          <div>
+          <div class="pb-3">
             <h3 class="text-center">Location</h3>
             <hr>
             <div class="rounded" id="map" style="width: 100%; height: 400px;background-color: grey;"></div>
           </div>
+          <div class="opaque rounded mx-5">
+              <p class="lead text-center pt-3">Tags Used</p>
+              <% photo.tags.forEach(function(tag){ %>
+                  <div class="btn-group px-2 pb-3 text-center">
+                      <button class="btn btn-light btn-sm" >
+                        <%=tag%>
+                      </button>
+                  </div>
 
-          <p class="lead text-center pt-4">Tags Used</p>
-          <hr>
-          <% photo.tags.forEach(function(tag){ %>
-            <div class="badge badge- text-wrap text-center m-1" style="width: 6rem;">
-              <h6><%=tag%></h6>
-            </div>
-            <% }) %>
+                <% }) %>
+          </div>
 
-            <div class="">
-              <hr>
+
+            <div class="py-3">
               <h5 class="text-center">If you would like to credit the Photo, here are some ways you can do so!!</h5>
               <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -99,23 +101,26 @@
                   <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-image" role="tab" aria-controls="nav-profile" aria-selected="false">Image</a>
                 </li>
               </ul>
-              <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-text" role="tabpanel" aria-labelledby="nav-home-tab">
-                  <strong>Preview:</strong><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The Photopreneur</a>
-                  <hr>
-                  <strong>Click below to copy the code:</strong>
-                  <textarea  onclick="copyText('text')" id="inputText" class="form-control" name="name" rows="6" cols="50"><span class="btn btn-link" ><span><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The-Photopreneur</a></span></span>
-                  </textarea>
-                </div>
-                <div class="tab-pane fade" id="nav-image" role="tabpanel" aria-labelledby="nav-profile-tab">
-                  <strong>Preview</strong>
-                  <hr>
-                  <img class="" src="http://localhost:3000/<%=photo.largeImgURL%>" alt="" style="margin: 0px; width: 20%;height: 20%;">
-                  <hr>
-                  <strong>Click below to copy the code:</strong>
-                  <textarea onclick="copyText('html')" id="inputHtml" class="form-control"name="name" rows="10" cols="50"><span><span style="margin:0 0 20px 0;display:inline-block;vertical-align:middle"><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>" style="text-decoration:none;font-size:10px;margin:0"><img src="http://localhost:3000<%=photo.largeImgURL%>" style="margin:0;width:100%" alt=""/><p style="font-size:12px;margin:0">The Photopreneur</p></a></span></span></textarea>
-                </div>
-              </div>
+
+                  <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-text" role="tabpanel" aria-labelledby="nav-home-tab">
+                      <p>Preview:</p><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The Photopreneur</a>
+                      <hr>
+                      <p>Click below to copy the code:</p>
+                      <textarea  onclick="copyText('text')" id="inputText" class="form-control" name="name" rows="6" cols="50"><span class="btn btn-link" ><span><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The-Photopreneur</a></span></span>
+                      </textarea>
+                    </div>
+                    <div class="tab-pane fade" id="nav-image" role="tabpanel" aria-labelledby="nav-profile-tab">
+                      <strong>Preview</strong>
+                      <hr>
+                      <img class="" src="http://localhost:3000/<%=photo.largeImgURL%>" alt="" style="margin: 0px; width: 20%;height: 20%;">
+                      <hr>
+                      <strong>Click below to copy the code:</strong>
+                      <textarea onclick="copyText('html')" id="inputHtml" class="form-control"name="name" rows="10" cols="50"><span><span style="margin:0 0 20px 0;display:inline-block;vertical-align:middle"><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>" style="text-decoration:none;font-size:10px;margin:0"><img src="http://localhost:3000<%=photo.largeImgURL%>" style="margin:0;width:100%" alt=""/><p style="font-size:12px;margin:0">The Photopreneur</p></a></span></span></textarea>
+                    </div>
+                  </div>
+
+
             </div>
           </div>
 

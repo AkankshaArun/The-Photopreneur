@@ -39,6 +39,10 @@ body {
   width: 100%;
 }
 
+.card-body {
+  background: #fff3e0;
+}
+
 .form-signin .btn {
   font-size: 80%;
   border-radius: 5rem;
@@ -110,7 +114,7 @@ body {
   color: #777;
 }
 
-.btn-google {
+/* .btn-google {
   color: white;
   background-color: #ea4335;
 }
@@ -118,4 +122,4 @@ body {
 .btn-facebook {
   color: white;
   background-color: #3b5998;
-}
+} */

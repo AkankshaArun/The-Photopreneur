@@ -31,7 +31,7 @@ app.use(flash());
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://photopreneur:*******@mongodb-shard-00-00-ijrzw.mongodb.net:27017,mongodb-shard-00-01-ijrzw.mongodb.net:27017,mongodb-shard-00-02-ijrzw.mongodb.net:27017/photopreneur?ssl=true&replicaSet=MongoDB-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser: true});
+mongoose.connect("mongodb://photopreneur:L3tt#hegameb3gin@mongodb-shard-00-00-ijrzw.mongodb.net:27017,mongodb-shard-00-01-ijrzw.mongodb.net:27017,mongodb-shard-00-02-ijrzw.mongodb.net:27017/photopreneur?ssl=true&replicaSet=MongoDB-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser: true});
 var indexRoutes = require("./routes/index");
 // var contactRoutes = require("./routes/contact");
 
@@ -185,6 +185,12 @@ app.use(function(req, res, next){
   app.use("/", indexRoutes);
   // app.use("/campgrounds/:id/comments", commentRoutes);
 
+app.use("/termsOfUse",function(req,res){
+  res.render("terms");
+})
+app.use("*",function(req,res){
+  res.render("unavailable");
+})
   app.listen("3000",function(){
     console.log("Server Is Responding");
   });
