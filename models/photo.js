@@ -8,7 +8,7 @@ orientation: Boolean,
 //horizontal = true and vertical as false
 color: String,
 //color can be Red,Green,Blue,yellow,mustard,skyblue,purple,white,black,brown
-tag: String
+tag: String,
 date : { type: Date, default: Date.now },
 // author: {
 //       id: {
