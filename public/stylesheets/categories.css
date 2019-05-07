@@ -4,6 +4,7 @@ body {
 font-family: 'Arvo', serif;
   color: #333;
   background-color: #fff;
+  font-size: 14px;
 }
 body {
   background-image: linear-gradient(to top, #780206, #5d0512, #410a14, #250a10, #000000);

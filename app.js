@@ -185,6 +185,12 @@ app.use(function(req, res, next){
   app.use("/", indexRoutes);
   // app.use("/campgrounds/:id/comments", commentRoutes);
 
+app.use("/termsOfUse",function(req,res){
+  res.render("terms");
+})
+app.use("*",function(req,res){
+  res.render("unavailable");
+})
   app.listen("3000",function(){
     console.log("Server Is Responding");
   });

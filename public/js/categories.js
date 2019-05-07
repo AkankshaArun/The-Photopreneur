@@ -1,7 +1,7 @@
 /* pagination========================================================*/
 'use strict';
 var numberOfItems = $('#page .textOverImage').length; // Get total number of the items that should be paginated
-var limitPerPage = 30; // Limit of items per each page
+var limitPerPage = 15; // Limit of items per each page
 $('#page .textOverImage:gt(' + (limitPerPage - 1) + ')').hide(); // Hide all items over page limits (e.g., 5th item, 6th item, etc.)
 var totalPages = Math.round(numberOfItems / limitPerPage); // Get number of pages
 $(".pagination").append("<li class='current-page page-item active'><a class='page-link' href='javascript:void(0)'>" + 1 + "</a></li>"); // Add first page marker
@@ -12,7 +12,7 @@ for (var i = 2; i <= totalPages; i++) {
 }
 
 // Add next button after all the page numbers
-$(".pagination").append("<li id='next-page page-item'><a class='page-link' href='javascript:void(0)' aria-label=Next><span aria-hidden=true>&raquo;</span></a></li>");
+$(".pagination").append("<li id='next-page'><a class='page-link' href='javascript:void(0)' aria-label=Next><span aria-hidden=true>&raquo;</span></a></li>");
 
 // Function that displays new items based on page number that was clicked
 $(".pagination li.current-page").on("click", function() {
