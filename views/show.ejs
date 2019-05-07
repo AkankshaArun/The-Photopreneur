@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-md-8">
       <div class="flex-row d-flex justify-content-center">
-        <img class="figure-img img-fluid rounded" src="<%=photo.smallImgURL%>" alt="" style="">
+        <img class="figure-img img-fluid rounded" src="<%=photo.largeImgURL%>" alt="" style="max-width: 100%;max-height: 100vh;">
       </div>
       <div class="flex-row d-flex justify-content-center">
         <div class="col col-md-12 d-flex justify-content-center">
@@ -104,19 +104,19 @@
 
                   <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-text" role="tabpanel" aria-labelledby="nav-home-tab">
-                      <p>Preview:</p><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The Photopreneur</a>
+                      <p>Preview:</p><a target="_blank" href="http://www.photopreneur.co.in/categories/<%=photo._id%>">The Photopreneur</a>
                       <hr>
                       <p>Click below to copy the code:</p>
-                      <textarea  onclick="copyText('text')" id="inputText" class="form-control" name="name" rows="6" cols="50"><span class="btn btn-link" ><span><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>">The-Photopreneur</a></span></span>
+                      <textarea  onclick="copyText('text')" id="inputText" class="form-control" name="name" rows="6" cols="50"><span class="btn btn-link" ><span><a target="_blank" href="http://www.photopreneur.co.in/categories/<%=photo._id%>">The-Photopreneur</a></span></span>
                       </textarea>
                     </div>
                     <div class="tab-pane fade" id="nav-image" role="tabpanel" aria-labelledby="nav-profile-tab">
                       <strong>Preview</strong>
                       <hr>
-                      <img class="" src="http://localhost:3000/<%=photo.largeImgURL%>" alt="" style="margin: 0px; width: 20%;height: 20%;">
+                      <img class="" src="http://www.photopreneur.co.in<%=photo.largeImgURL%>" alt="" style="margin: 0px; width: 20%;height: 20%;">
                       <hr>
                       <strong>Click below to copy the code:</strong>
-                      <textarea onclick="copyText('html')" id="inputHtml" class="form-control"name="name" rows="10" cols="50"><span><span style="margin:0 0 20px 0;display:inline-block;vertical-align:middle"><a target="_blank" href="http://localhost:3000/categories/<%=photo._id%>" style="text-decoration:none;font-size:10px;margin:0"><img src="http://localhost:3000<%=photo.largeImgURL%>" style="margin:0;width:100%" alt=""/><p style="font-size:12px;margin:0">The Photopreneur</p></a></span></span></textarea>
+                      <textarea onclick="copyText('html')" id="inputHtml" class="form-control"name="name" rows="10" cols="50"><span><span style="margin:0 0 20px 0;display:inline-block;vertical-align:middle"><a target="_blank" href="http://www.photopreneur.co.in/categories/<%=photo._id%>" style="text-decoration:none;font-size:10px;margin:0"><img src="http://www.photopreneur.co.in<%=photo.largeImgURL%>" style="margin:0;width:100%" alt=""/><p style="font-size:12px;margin:0">The Photopreneur</p></a></span></span></textarea>
                     </div>
                   </div>
 
@@ -161,7 +161,7 @@
 
         </script>
         <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=******apiKey*******&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=********API*******&callback=initMap">
         </script>
 
         <% include partials/footer %>
