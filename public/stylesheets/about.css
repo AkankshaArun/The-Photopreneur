@@ -1,7 +1,12 @@
 body{
     font-size: 14px;
     background-image: linear-gradient(to bottom, #061161, #4b0052, #68003c, #760023, #780206);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Arvo', serif;
 }
+
+
 
 .btn.btn-square {
   border-radius: 0;
