@@ -10,7 +10,7 @@
 }
 
 .dropdown-item{
-    background: #061161  ;
+    background: black  ;
 }
 
 .dropdown-item:hover{
@@ -19,7 +19,7 @@
 
 .navbar-custom,
 .navbar .navbar-nav .dropdown-menu {
-    background-color: #061161;
+    background-color: black;
 }
 
 /* change the brand and text color */

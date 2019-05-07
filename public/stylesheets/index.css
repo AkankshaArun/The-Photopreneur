@@ -1,8 +1,8 @@
-
+.card-deck .card-body {
+    background: #e5eff2 ;
+}
 .jumbotron{
-    background: #780206;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-image: linear-gradient(to top, #780206, #5d0512, #410a14, #250a10, #000000);
     padding-bottom: 0px;
     margin-bottom: 0px;
     background-repeat: no-repeat;
@@ -40,10 +40,9 @@
 }
 }
 body {
-    background: #00000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #061161, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #061161, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-repeat: no-repeat;
+    /* background: -webkit-linear-gradient(to bottom, #061161, #000000);
+    background: linear-gradient(to bottom, #061161, #000000);  */
+background-image: linear-gradient(to bottom, #000000, #250a10, #410a14, #5d0512, #780206);  background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Arvo', serif;
   font-size: 14px;

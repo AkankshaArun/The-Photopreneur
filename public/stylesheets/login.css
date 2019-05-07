@@ -4,7 +4,6 @@
 }
 
 body {
-    background: #00000;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #061161, #000000);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #061161, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-repeat: no-repeat;
@@ -16,12 +15,20 @@ body {
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .card-signin .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
   font-size: 1.5rem;
+}
+
+.card-signin .card-img-left {
+  width: 45%;
+  /* Link to your background image using in the property below! */
+  background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
+  background-size: cover;
 }
 
 .card-signin .card-body {
@@ -32,19 +39,17 @@ body {
   width: 100%;
 }
 
-.form-signin .btn{
+.card-body {
+  background: #fff3e0;
+}
+
+.form-signin .btn {
   font-size: 80%;
   border-radius: 5rem;
   letter-spacing: .1rem;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
-}
-
-
-#forgotBtn {
-  width: 35%;
-  position: absolute;
 }
 
 .form-label-group {
@@ -76,7 +81,6 @@ body {
   border-radius: .25rem;
   transition: all .1s ease-in-out;
 }
-
 .form-label-group input::-webkit-input-placeholder {
   color: transparent;
 }
