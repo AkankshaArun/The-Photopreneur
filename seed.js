@@ -646,7 +646,7 @@ function seedDB(){
     });Photo.create({
       largeImgURL : "/images/Lights/img_lights_1.JPG",
       smallImgURL : "/images/smallImages/img_lights_small_1.JPG",
-      fileName: "img_people_small1.JPG",
+      fileName: "img_lights_small1.JPG",
       tag : "lights",
       orientation: true,
       like : 0,
@@ -664,7 +664,7 @@ function seedDB(){
     });Photo.create({
       largeImgURL : "/images/Lights/img_lights_2.JPG",
       smallImgURL : "/images/smallImages/img_lights_small_2.JPG",
-      fileName: "img_people_small2.JPG",
+      fileName: "img_lights_small2.JPG",
       tag : "lights",
       orientation: true,
       like : 0,
@@ -682,7 +682,7 @@ function seedDB(){
     });Photo.create({
       largeImgURL : "/images/Lights/img_lights_3.JPG",
       smallImgURL : "/images/smallImages/img_lights_small_3.JPG",
-      fileName: "img_people_small3.JPG",
+      fileName: "img_lights_small3.JPG",
       tag : "lights",
       orientation: true,
       like : 0,
@@ -700,7 +700,7 @@ function seedDB(){
     });Photo.create({
       largeImgURL : "/images/Lights/img_lights_4.JPG",
       smallImgURL : "/images/smallImages/img_lights_small_4.JPG",
-      fileName: "img_people_small4.JPG",
+      fileName: "img_lights_small4.JPG",
       tag : "lights",
       orientation: true,
       like : 0,
@@ -718,7 +718,7 @@ function seedDB(){
     });Photo.create({
       largeImgURL : "/images/Lights/img_lights_5.JPG",
       smallImgURL : "/images/smallImages/img_lights_small_5.JPG",
-      fileName: "img_people_small5.JPG",
+      fileName: "img_lights_small5.JPG",
       tag : "lights",
       orientation: true,
       like : 0,
