@@ -8,6 +8,7 @@ background-image: linear-gradient(to top, #780206, #5d0512, #410a14, #250a10, #0
     border-radius: 0px;
 }
 
+
 .my-btn {
     background-color: Transparent;
     background-repeat:no-repeat;
@@ -15,8 +16,13 @@ background-image: linear-gradient(to top, #780206, #5d0512, #410a14, #250a10, #0
     cursor:pointer;
     overflow: hidden;
     border:1px solid white;
+    color: white;
 }
 
+.my-btn:hover{
+    background-color: black;
+    color: white;
+}
 .display-4{
     color: white;
     font-family: 'Pacifico', cursive;
@@ -56,7 +62,6 @@ background-image: linear-gradient(to bottom, #000000, #250a10, #410a14, #5d0512,
 .btn-fix {
     padding: 0;
     border: none;
-
     white-space: normal;
   }
 
