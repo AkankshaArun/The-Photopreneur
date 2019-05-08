@@ -6,17 +6,17 @@
 <div class="text-center pt-4">
 
   <form class="form-group" action="/categories" method="post">
-    <button class="btn my-btn btn-lg mb-4" id="food-btn" name="group" href="/categories" value="food">Food</button>
-    <button class="btn my-btn btn-lg mb-4" id="lights-btn" name="group" href="/categories" value="lights">Lights</button>
-    <button class="btn my-btn btn-lg mb-4" id="people-btn" name="group" href="/categories" value="people">People</button>
-    <button class="btn my-btn btn-lg mb-4" id="travel-btn" name="group" href="/categories" value="travel">Travel</button>
-    <button class="btn my-btn btn-lg mb-4" id="beach-btn" name="group" href="/categories" value="beach">Beaches</button>
-    <button class="btn my-btn btn-lg mb-4" id="all-btn" name="group" href="/categories" value="random">Random</button>
-    <button class="btn my-btn btn-lg mb-4" id="structures-btn" name="group" href="/categories" value="structures">Structures</button>
-    <button class="btn my-btn btn-lg mb-4" id="floraFauna-btn" name="group" href="/categories" value="nature">Nature</button>
-    <button class="btn my-btn btn-lg mb-4" id="golden-btn" name="group" href="/categories" value="golden">Golden Hour</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1 " id="food-btn" name="group" href="/categories" value="food">Food</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="lights-btn" name="group" href="/categories" value="lights">Lights</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="people-btn" name="group" href="/categories" value="people">People</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="travel-btn" name="group" href="/categories" value="travel">Travel</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="beach-btn" name="group" href="/categories" value="beach">Beaches</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="all-btn" name="group" href="/categories" value="random">Random</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="structures-btn" name="group" href="/categories" value="structures">Structures</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="floraFauna-btn" name="group" href="/categories" value="nature">Nature</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="golden-btn" name="group" href="/categories" value="golden">Golden Hour</button>
   </form>
-  <div id="page" class="gallery">
+  <div id="page" class="gallery container-fluid">
     <% photos.forEach(function(value){ %>
       <button style="padding: 0;border-radius: 0;" type="button" class="gallery-item textOverImage" data-toggle="modal" data-target="#<%=('a' + value.fileName).slice(0,-4)%>">
         <img src="<%=value.smallImgURL%>" class="gallery-item">
