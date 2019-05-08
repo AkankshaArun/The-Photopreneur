@@ -1,6 +1,4 @@
-.card-deck .card-body {
-    background: #e5eff2 ;
-}
+
 .jumbotron{
 background-image: linear-gradient(to top, #780206, #5d0512, #410a14, #250a10, #000000);
     padding-bottom: 0px;
@@ -48,13 +46,19 @@ background-image: linear-gradient(to bottom, #000000, #250a10, #410a14, #5d0512,
   font-size: 14px;
 }
 
-.card-body {
-  background: #fff3e0;
-}
 
 .card{
     border-radius: 0px;
+    cursor: pointer;
+    background: #e5eff2;
 }
+
+.btn-fix {
+    padding: 0;
+    border: none;
+
+    white-space: normal;
+  }
 
 @media only screen and (min-width: 1200px) {
     p {
