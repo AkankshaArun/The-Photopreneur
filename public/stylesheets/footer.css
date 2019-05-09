@@ -27,9 +27,11 @@ h5 a:hover {
     background-color: Transparent;
 }
 
-#url{
+.url{
     color: #B0E2FF;
 }
+
+
 
 #first, #second, #third, #fourth {
     padding: 0px 0px 0px 0px;
