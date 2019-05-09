@@ -1,10 +1,9 @@
 body{
     background-image: linear-gradient(to bottom, #000000, #3b3b3b, #777777, #b9b9b9, #ffffff);
     color: white;
+    font-family: 'Playfair Display', serif;
 }
-.pb-2, body{
-    font-family: 'Arvo', serif;
-}
+
 .pt-5{
     font-family: 'Pacifico', cursive;
     }
