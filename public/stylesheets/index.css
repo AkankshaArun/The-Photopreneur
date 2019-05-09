@@ -56,7 +56,8 @@ font-family: 'Playfair Display', serif;
 .card{
     border-radius: 0px;
     cursor: pointer;
-    background: #e5eff2;
+    background: white;
+    color: black;
 }
 
 .btn-fix {
