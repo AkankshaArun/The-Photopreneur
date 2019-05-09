@@ -23,6 +23,21 @@ background-image: linear-gradient(to bottom, #000000, #0f0006, #160010, #190019,
     /* justify-content: center; */
 }
 
+.container .row .col .btn-group .btn-fb:hover{
+    color: #3b5998;
+    background-color: white;
+}
+
+.container .row .col .btn-group .btn-ins:hover{
+    color: #FD1D1D;
+    background-color: white;
+}
+
+.container .row .col .btn-group .btn-email:hover{
+    color: #B23121;
+    background-color: white;
+}
+
 
 
 @media only screen and (min-width: 1200px) {
