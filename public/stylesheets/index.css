@@ -48,7 +48,7 @@ body {
     background: linear-gradient(to bottom, #061161, #000000);  */
 background-image: linear-gradient(to bottom, #000000, #250a10, #410a14, #5d0512, #780206);  background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Arvo', serif;
+font-family: 'Playfair Display', serif;
   font-size: 14px;
 }
 
@@ -56,7 +56,8 @@ background-image: linear-gradient(to bottom, #000000, #250a10, #410a14, #5d0512,
 .card{
     border-radius: 0px;
     cursor: pointer;
-    background: #e5eff2;
+    background: white;
+    color: black;
 }
 
 .btn-fix {

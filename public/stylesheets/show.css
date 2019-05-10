@@ -4,9 +4,8 @@ body {
   /* background: linear-gradient(to bottom, #061161, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */ */
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  font-family: 'Arvo', serif;
+font-family: 'Playfair Display', serif;
   color: white;
 }
 

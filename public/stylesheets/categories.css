@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-font-family: 'Arvo', serif;
+font-family: 'Playfair Display', serif;
   color: #333;
   background-color: #fff;
   font-size: 14px;
@@ -15,7 +15,7 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr),auto);
   grid-gap: 20px;
   max-width: 1400px;
   margin: 20px auto;

@@ -3,7 +3,7 @@ body{
 background-image: linear-gradient(to bottom, #000000, #0f0006, #160010, #190019, #170023, #1d032a, #230331, #2c0138, #470034, #5e002a, #6f001c, #780206);
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Arvo', serif;
+font-family: 'Playfair Display', serif;
     font-size: 14px;
 }
 
@@ -19,8 +19,23 @@ background-image: linear-gradient(to bottom, #000000, #0f0006, #160010, #190019,
 
 .container .d-flex .col p{
     width: 100%;
-    font-family: 'Arvo', serif;
+font-family: 'Playfair Display', serif;
     /* justify-content: center; */
+}
+
+.container .row .col .btn-group .btn-fb:hover{
+    color: #3b5998;
+    background-color: white;
+}
+
+.container .row .col .btn-group .btn-ins:hover{
+    color: #FD1D1D;
+    background-color: white;
+}
+
+.container .row .col .btn-group .btn-email:hover{
+    color: #B23121;
+    background-color: white;
 }
 
 

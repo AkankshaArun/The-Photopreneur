@@ -1,4 +1,8 @@
-@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+body{
+font-family: 'Playfair Display', serif;
+  font-size: 14px;
+}
+
 @-webkit-keyframes rotate {
   25% {
     -webkit-transform: rotate(-28deg);
