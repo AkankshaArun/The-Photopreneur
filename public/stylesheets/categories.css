@@ -13,12 +13,22 @@ body {
   font-size: 14px;
 }
 
-.gallery {
+@media screen and (max-width : 453px) {
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr),auto);
+    grid-gap: 20px;
+    max-width: 1400px;
+    margin: 20px auto;  }
+}
+@media screen and (min-width : 453px) {
+  .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr),auto);
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 20px;
   max-width: 1400px;
   margin: 20px auto;
+}
 }
 .gallery-item {
   height: 250px;
