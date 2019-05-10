@@ -20,7 +20,7 @@
   <div id="page" class="gallery container-fluid">
     <% photos.forEach(function(value){ %>
       <button style="padding: 0;border-radius: 0;" type="button" class="gallery-item textOverImage" data-toggle="modal" data-target="#<%=('a' + value.fileName).slice(0,-4)%>">
-        <img src="<%=value.smallImgURL%>" class="gallery-item">
+        <img src="<%=value.smallImgURL%>" class="gallery-item" alt="Error in loading Image">
         <%console.log(value)%>
       </button>
       <!-- Modal -->
