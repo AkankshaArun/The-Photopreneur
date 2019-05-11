@@ -19,8 +19,8 @@
 </div>
   <div id="page" class="gallery container-fluid">
     <% photos.forEach(function(value){ %>
-      <button style="padding: 0;border-radius: 0;" type="button" class="gallery-item textOverImage" data-toggle="modal" data-target="#<%=('a' + value.fileName).slice(0,-4)%>">
-        <img src="<%=value.smallImgURL%>" class="gallery-item" alt="Error in loading Image">
+      <button style="padding: 0;border: 0;" type="button" class="gallery-item textOverImage rounded" data-toggle="modal" data-target="#<%=('a' + value.fileName).slice(0,-4)%>">
+        <img style="border: 0;" src="<%=value.smallImgURL%>" class="gallery-item rounded" alt="Error in loading Image">
         <%console.log(value)%>
       </button>
       <!-- Modal -->
