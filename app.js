@@ -9,7 +9,27 @@ methodOverride = require("method-override"),
 Comment     = require("./models/comment"),
 User        = require("./models/user"),
 Photo       = require("./models/photo"),
+
 seedDB      = require("./seed"),
+seedBeaches      = require("./seedBeaches"),
+locationBeach      = require("./locationBeach"),
+seedNature      = require("./seedNature"),
+locationNature      = require("./locationNature"),
+seedFood      = require("./seedFood"),
+locationFood      = require("./locationFood"),
+seedGolden    = require("./seedGolden"),
+locationGolden      = require("./locationGolden"),
+seedPeople    = require("./seedPeople"),
+locationPeople      = require("./locationPeople"),
+seedRandom    = require("./seedRandom"),
+locationRandom      = require("./locationRandom"),
+seedStructures    = require("./seedStructures"),
+locationStructures      = require("./locationStructures"),
+seedLights    = require("./seedLights"),
+locationLights      = require("./locationLights"),
+seedTravel    = require("./seedTravel"),
+locationTravel      = require("./locationTravel"),
+
 ejs = require('ejs');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 var nodemailer = require("nodemailer");
@@ -21,7 +41,26 @@ require('dotenv').config();
 var indexRoutes      = require("./routes/index");
 
 //seedDB
-//seedDB();
+// seedNature();
+// seedBeaches();
+// seedFood();
+// seedGolden();
+// seedStructures();
+// seedPeople();
+// seedLights();
+// seedRandom();
+// seedTravel();
+//locationNature();
+//locationBeach();
+//locationFood();
+//locationGolden();
+//locationPeople();
+//locationRandom();
+//locationStructures();
+//locationLights();
+//locationTravel();
+
+
 
 mongoose.set('useCreateIndex', true);
 app.use(express.static(__dirname + "/public"));
@@ -31,7 +70,7 @@ app.use(flash());
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect("mongodb://photopreneur:*****@mongodb-shard-00-00-ijrzw.mongodb.net:27017,mongodb-shard-00-01-ijrzw.mongodb.net:27017,mongodb-shard-00-02-ijrzw.mongodb.net:27017/photopreneur?ssl=true&replicaSet=MongoDB-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser: true});
+mongoose.connect("mongodb://photopreneur:******@mongodb-shard-00-00-ijrzw.mongodb.net:27017,mongodb-shard-00-01-ijrzw.mongodb.net:27017,mongodb-shard-00-02-ijrzw.mongodb.net:27017/photopreneur?ssl=true&replicaSet=MongoDB-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser: true});
 var indexRoutes = require("./routes/index");
 // var contactRoutes = require("./routes/contact");
 
@@ -132,36 +171,6 @@ app.use(function(req, res, next){
       res.redirect("/categories/" + req.params.id);
     });
   });
-
-//contact us logic
-// app.post('/contact',urlencodedParser, function(req, res) {
-//     console.log(req.body);
-//     var smtpTransport = nodemailer.createTransport({
-//       service: 'Gmail',
-//       auth: {
-//         user: 'photopreneur.horizon@gmail.com',
-//         pass: process.env.GMAILPW
-//       }
-//     });
-//     var mailOptions = {
-//       to: 'photopreneur.horizon@gmail.com',
-//       from: 'photopreneur.horizon@gmail.com',
-//       subject: 'New Mail from a user',
-//       text: 'Message is from: ' + req.body.firstName +
-//         'User mail ID: ' + req.body.email + '\n Message: ' + req.body.message +'\n'
-//     };
-//     smtpTransport.sendMail(mailOptions, function(err) {
-//         if(err){
-//             req.flash('error',err.message);
-//         } else {
-//             console.log("mail sent");
-//             req.flash('success', 'Thanks for getting in touch!');
-//
-//         }
-//     });
-//     res.render('contact',{data: req.body});
-//
-// });
 
   function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
