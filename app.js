@@ -34,7 +34,7 @@ ejs = require('ejs');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 var nodemailer = require("nodemailer");
 
-
+var logFlag=false;
 
 // // configure dotenv
 require('dotenv').config();
@@ -161,22 +161,25 @@ app.use(function(req, res, next){
   });
   //like button
 
-  app.post('/categories/:id/act',isLoggedIn, function(req, res) {
-    Photo.updateOne({_id: req.params.id}, {$inc: {like: 1}}, {new: true },function(err,responce){
-      if (err) {
-        console.log(err);
-      }else {
-        console.log(responce);
-      }
-      res.redirect("/categories/" + req.params.id);
-    });
-  });
+  // app.post('/categories/:id/act',isLoggedIn, function(req, res) {
+  //   Photo.updateOne({_id: req.params.id}, {$inc: {like: 1}}, {new: true },function(err,responce){
+  //     if (err) {
+  //       console.log(err);
+  //     }else {
+  //       console.log(responce);
+  //     }
+  //     res.redirect("/categories/" + req.params.id);
+  //   });
+  // });
 
   function isLoggedIn(req, res, next){
-    if(req.isAuthenticated()){
-      return next();
-    }
-    res.redirect("/login");
+      if(req.isAuthenticated()){
+          return next();
+      }
+      logFlag=true;
+      console.log(logFlag);
+      console.log("==================");
+      res.render("login", {logFlag:logFlag});
   }
   //download
   app.get('/download/:id',isLoggedIn ,function(req, res, next){
