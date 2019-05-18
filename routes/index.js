@@ -44,7 +44,7 @@ router.post("/register", function(req, res){
     });
 });
 
-router.get("/login",function(req,res){
+router.get("/login",isLoggedIn,function(req,res){
   res.render("login");
 });
 
@@ -216,7 +216,8 @@ function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-    res.redirect("/login");
+    logFlag=false;
+    res.render("login", {logFlag : logFlag});
 }
 
 
