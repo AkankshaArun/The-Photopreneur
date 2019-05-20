@@ -52,7 +52,7 @@
           <% photo.comments.forEach(function(comment){ %>
             <div class="row px-2">
               <div class="col-md-12 pt-2">
-                <h5 class="text-capitalize"><strong><%=comment.author.username %></strong></h5>
+                <h5 class="text-capitalize"><strong><a href="/users/<%=comment.author.id %>"><%=comment.author.username %></a></strong></h5>
                 <span class="float-right"><%=comment.date.toDateString().slice(4,) + " " + comment.date.toLocaleTimeString()%></span>
                 <h6> <%=comment.text%></h6>
               </div>

@@ -30,7 +30,15 @@ router.get("/register",function(req,res){
 
 //handle sign up logic
 router.post("/register", function(req, res){
-    var newUser = new User({username: req.body.username, email: req.body.email});
+    var newUser = new User({
+        username: req.body.username,
+        email: req.body.email,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
+    });
+    if (req.body.adminCode === 'Or30_L0V3r5') {
+        newUser.isAdmin = true;
+    }
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             console.log(err);
@@ -60,6 +68,18 @@ router.get("/logout", function(req, res){
    // req.flash("success", "Logged you out!");
    res.redirect("/");
 });
+
+//User Profile
+router.get("/users/:id", function(req,res){
+    User.findById(req.params.id, function(err, foundUser){
+        if(err){
+            console.log("error");
+            req.flash("error","User not found");
+            res.redirect("back");
+        }
+        res.render("users/showUser", {user: foundUser});
+    });
+})
 
 // forgot password
 router.get('/forgot', function(req, res) {

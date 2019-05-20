@@ -11,7 +11,17 @@
           </div> -->
           <div class="card-body">
             <h5 class="card-title text-center">Register</h5>
-            <form class="form-signin" action="/register" method="post">
+            <form class="form-signin" action="/register" method="post" enctype="multipart/form-data">
+                <div class="form-label-group">
+                  <input type="text" id="inputFirstName" class="form-control" name="firstName" placeholder="First Name" required autofocus>
+                  <label for="inputFirstName">First Name</label>
+                </div>
+
+                <div class="form-label-group">
+                  <input type="text" id="inputLastName" class="form-control" name="lastName" placeholder="Last Name" required autofocus>
+                  <label for="inputLastName">Last Name</label>
+                </div>
+
               <div class="form-label-group">
                 <input type="text" id="inputUserame" class="form-control" name="username" placeholder="Username" required autofocus>
                 <label for="inputUserame">Username</label>
@@ -21,6 +31,11 @@
                 <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required>
                 <label for="inputEmail">Email address</label>
               </div>
+
+              <!-- <div class="form-label-group">
+                <input type="file" id="inputImage" class="form-control" accept="image/*" name="image" placeholder="Image URL" required>
+                <label for="inputImage">Display Image</label>
+              </div> -->
 
               <hr>
 
@@ -32,6 +47,11 @@
               <div class="form-label-group">
                 <input type="password" id="inputConfirmPassword" class="form-control" name="confirm" placeholder="Password" required>
                 <label for="inputConfirmPassword">Confirm password</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputAdminCode" class="form-control" name="adminCode" placeholder="Admin Code">
+                <label for="inputAdminCode">Admin Code(optional)</label>
               </div>
 
               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
