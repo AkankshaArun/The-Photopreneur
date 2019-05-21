@@ -6,12 +6,12 @@
 <div class="text-center pt-4">
 
   <form class="form-group" action="/categories" method="post">
-    <button class="btn my-btn btn-lg mb-4 mx-1 " id="food-btn" name="group" value="food">Food</button>
-    <button class="btn my-btn btn-lg mb-4 mx-1" id="lights-btn" name="group" value="lights">Lights</button>
-    <button class="btn my-btn btn-lg mb-4 mx-1" id="people-btn" name="group" value="people">People</button>
     <button class="btn my-btn btn-lg mb-4 mx-1" id="travel-btn" name="group" value="travel">Travel</button>
     <button class="btn my-btn btn-lg mb-4 mx-1" id="beach-btn" name="group" value="beach">Beaches</button>
     <button class="btn my-btn btn-lg mb-4 mx-1" id="all-btn" name="group" value="random">Random</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1 " id="food-btn" name="group" value="food">Food</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="lights-btn" name="group" value="lights">Lights</button>
+    <button class="btn my-btn btn-lg mb-4 mx-1" id="people-btn" name="group" value="people">People</button>
     <button class="btn my-btn btn-lg mb-4 mx-1" id="structures-btn" name="group" value="structures">Structures</button>
     <button class="btn my-btn btn-lg mb-4 mx-1" id="floraFauna-btn" name="group" value="nature">Nature</button>
     <button class="btn my-btn btn-lg mb-4 mx-1" id="golden-btn" name="group" value="golden">Golden Hour</button>
@@ -33,7 +33,7 @@
               </button>
             </div>
             <div class="modal-body imgbox">
-              <img class="center-fit <%= value.orientation === true ? 'horizontal' : 'vertical' %> rounded img-fluid" src="<%=value.largeImgURL%>" alt="Test" >
+              <img class="center-fit rounded img-fluid" src="<%=value.smallImgURL%>" alt="Test" >
             </div>
             <div class="modal-footer">
               <span class="text-left"><i class="fa fa-eye" aria-hidden="true"></i><%=" " + value.views + " " + "Views"%></span>
