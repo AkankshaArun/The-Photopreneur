@@ -18,3 +18,12 @@ hr{
 .opaque{
     background-color: rgba(0,0,0,0.5);
 }
+
+.horizontal {
+max-width: 100%;
+max-height: 70vh;
+}
+.vertical {
+  max-width: 100%;
+  max-height: 80vh;
+}
