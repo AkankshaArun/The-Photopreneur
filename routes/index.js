@@ -62,11 +62,16 @@ router.get("/logout", function(req, res){
 });
 
 // forgot password
-router.get('/forgot', function(req, res) {
-  res.render('forgot');
+router.get('/forgotPassword', function(req, res) {
+  res.render('forgotPassword');
 });
 
-router.post('/forgot', function(req, res, next) {
+router.get('/forgotUsername', function(req, res) {
+  res.render('forgotUsername');
+});
+
+//forgot password
+router.post('/forgotPassword', function(req, res, next) {
   async.waterfall([
     function(done) {
       crypto.randomBytes(20, function(err, buf) {
@@ -78,7 +83,7 @@ router.post('/forgot', function(req, res, next) {
       User.findOne({ email: req.body.email }, function(err, user) {
         if (!user) {
           req.flash('error', 'No account with that email address exists.');
-          return res.redirect('/forgot');
+          return res.redirect('/forgotPassword');
         }
 
         user.resetPasswordToken = token;
@@ -104,7 +109,9 @@ router.post('/forgot', function(req, res, next) {
         text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
           'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
           'http://' + req.headers.host + '/reset/' + token + '\n\n' +
-          'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+          'If you did not request this, please ignore this email and your password will remain unchanged.\n\n' +
+          'Regards,\n' +
+          'The Photopreneur Team'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
         console.log('mail sent');
@@ -114,7 +121,7 @@ router.post('/forgot', function(req, res, next) {
     }
   ], function(err) {
     if (err) return next(err);
-    res.redirect('/forgot');
+    res.redirect('/forgotPassword');
   });
 });
 
@@ -123,7 +130,7 @@ router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
     if (!user) {
       req.flash('error', 'Password reset token is invalid or has expired.');
-      return res.redirect('/forgot');
+      return res.redirect('/forgotPassword');
     }
     res.render('reset', {token: req.params.token});
   });
@@ -166,8 +173,10 @@ router.post('/reset/:token', function(req, res) {
         to: user.email,
         from: 'photopreneur.horizon@gmail.com',
         subject: 'Password has been changed for The Photopreneur',
-        text: 'Hello,\n\n' +
-          'This is a confirmation that the password for your account with username: ' + user.username + ' has just been changed.\n'
+        text: 'Hello ,\n\n' +
+          'This is a confirmation that the password for your account with username: ' + user.username + ' has just been changed.\n\n' +
+          'Regards,\n' +
+          'The Photopreneur Team'
       };
       smtpTransport.sendMail(mailOptions, function(err) {
         req.flash('success', 'Success! Your password has been changed.');
@@ -179,6 +188,59 @@ router.post('/reset/:token', function(req, res) {
   });
 });
 
+//Forgot username
+router.post('/forgotUsername', function(req, res, next) {
+  async.waterfall([
+    function(done) {
+      crypto.randomBytes(20, function(err, buf) {
+        var token = buf.toString('hex');
+        done(err, token);
+      });
+    },
+    function(token, done) {
+      User.findOne({ email: req.body.email }, function(err, user) {
+        if (!user) {
+          req.flash('error', 'No account with that email address exists.');
+          return res.redirect('/forgotUsername');
+        }
+
+        user.resetPasswordToken = token;
+        user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+
+        user.save(function(err) {
+          done(err, token, user);
+        });
+      });
+    },
+    function(token, user, done) {
+      var smtpTransport = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+          user: 'photopreneur.horizon@gmail.com',
+          pass: process.env.GMAILPW
+        }
+      });
+      var mailOptions = {
+        to: user.email,
+        from: 'photopreneur.horizon@gmail.com',
+        subject: 'The Photopreneur Username',
+        text: 'You are receiving this because you (or someone else) have requested the username for your account.\n\n' +
+          'Username : ' + user.username + '\n\n' +
+          'If you did not request this, please ignore this email.\n\n' +
+          'Regards,\n' +
+          'The Photopreneur Team'
+      };
+      smtpTransport.sendMail(mailOptions, function(err) {
+        console.log('mail sent');
+        req.flash('success', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+        done(err, 'done');
+      });
+    }
+  ], function(err) {
+    if (err) return next(err);
+    res.redirect('/forgotUsername');
+  });
+});
 
 
 // //Contact Us logic
