@@ -85,16 +85,19 @@
               <h5 class="text-center">If you would like to credit the Photo, here are some ways you can do so!!</h5>
               <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-text" role="tab" aria-controls="nav-home" aria-selected="true">Text</a>
+                  <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-text" role="tab" aria-controls="nav-home" aria-selected="true" style="color:#67C8FF;" >Text</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-image" role="tab" aria-controls="nav-profile" aria-selected="false">Image</a>
+                  <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-image" role="tab" aria-controls="nav-profile" aria-selected="false" style="color:#67C8FF;">Image</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="nav-url-tab" data-toggle="tab" href="#nav-url" role="tab" aria-controls="nav-url" aria-selected="false" style="color:#67C8FF;">Image URL</a>
                 </li>
               </ul>
 
                   <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-text" role="tabpanel" aria-labelledby="nav-home-tab">
-                      <p>Preview:</p><a target="_blank" href="http://www.photopreneur.co.in/categories/<%=photo._id%>">The Photopreneur</a>
+                      <p>Preview:</p><a target="_blank" href="http://www.photopreneur.co.in/categories/<%=photo._id%>" style="color:#67C8FF;">The Photopreneur</a>
                       <hr>
                       <p>Click below to copy the code:</p>
                       <textarea  onclick="copyText('text')" id="inputText" class="form-control" name="name" rows="6" cols="50"><span class="btn btn-link" ><span><a target="_blank" href="http://www.photopreneur.co.in/categories/<%=photo._id%>">The-Photopreneur</a></span></span>
@@ -106,7 +109,12 @@
                       <img class="" src="http://www.photopreneur.co.in<%=photo.largeImgURL%>" alt="" style="margin: 0px; width: 20%;height: 20%;">
                       <hr>
                       <strong>Click below to copy the code:</strong>
-                      <textarea onclick="copyText('html')" id="inputHtml" class="form-control"name="name" rows="10" cols="50"><span><span style="margin:0 0 20px 0;display:inline-block;vertical-align:middle"><a target="_blank" href="http://www.photopreneur.co.in/categories/<%=photo._id%>" style="text-decoration:none;font-size:10px;margin:0"><img src="http://www.photopreneur.co.in<%=photo.largeImgURL%>" style="margin:0;width:100%" alt=""/><p style="font-size:12px;margin:0">The Photopreneur</p></a></span></span></textarea>
+                      <textarea onclick="copyText('html')" id="inputHtml" class="form-control"name="name" rows="10" cols="50"><span><span style="margin:0 0 20px 0;display:inline-block;vertical-align:middle"><a target="_blank" href="http://www.photopreneur.co.in/categories/<%=photo._id%>" style="text-decoration:none;font-size:10px;margin:0"><img src="http://www.photopreneur.co.in<%=photo.largeImgURL%>" style="margin:0;width:100%" alt="Image unavailable"><p style="font-size:12px;margin:0">The Photopreneur</p></a></span></span></textarea>
+                    </div>
+                    <div class="tab-pane fade" id="nav-url" role="tabpanel" aria-labelledby="nav-url-tab">
+                      <p>Click URL to Copy:</p>
+                      <textarea class="form-control"name="name" rows="2" cols="50" onclick="copyText('url')" id="inputURL">http://www.photopreneur.co.in/categories/<%=photo._id%></textarea>
+                      <hr>
                     </div>
                   </div>
 
@@ -135,8 +143,10 @@
           /* Get the text field */
           if(value == 'html'){
             var copyText = document.getElementById("inputHtml");
-          }else {
+          }else if(value == 'text'){
             var copyText = document.getElementById("inputText");
+          }else{
+            var copyText = document.getElementById("inputURL");
           }
           console.log(copyText);
           /* Select the text field */
